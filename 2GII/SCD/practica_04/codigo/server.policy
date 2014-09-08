@@ -1,0 +1,3 @@
+grant codeBase "file:${HOME}/calculadora1" {
+    permission java.security.AllPermission;
+};

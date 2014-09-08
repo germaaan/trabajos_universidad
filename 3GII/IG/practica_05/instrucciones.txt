@@ -1,0 +1,49 @@
+﻿Uso de las teclas
+====================================================================
+
+Los cursores mueven la cámara a izquierda y derecha, arriba y abajo.
+Las teclas Página adelante y Página atrás acercan y alejan la cámara
+
+Teclas Q y ESC: salir
+
+Tecla F1:Objeto CAR
+Tecla F2:Objeto GRUA DE OBRA
+
+
+* Para el coche:
+-----------------
+
+Tecla B: Gira ruedas delanteras a la izquierda
+Tecla N: Gira ruedas delanteras a la derecha
+
+
+* Para la gruas:
+-----------------
+
+Tecla S: Aumenta velocidad de giro de la estructura
+Tecla A: Disminuye velocidad de giro de la estructura
+Tecla Z: Para el giro de la estructura
+
+Tecla D: Aumenta velocidad de desplazamiento del soporte del gancho
+Tecla F: Disminuye velocidad de desplazamiento del soporte del gancho
+Tecla X: Para el movimiento del gancho
+
+Tecla G: Aumenta velocidad de movimiento del gancho
+Tecla H: Disminuye velocidad de movimiento del gancho
+Tecla C: Para el movimiento del gancho
+
+
+Uso del ratón
+====================================================================
+
+Mover ratón con el botón derecho pulsado -> Modificar la camara con la que se está visualizando.
+
+Resultado de pulsar con el botón izquierdo cada uno de los elementos:
+
+GRUA:
+	Base			->	Cambio de velocidad estructura hacia la izquierda
+	Estructura		-> 	Cambio de velocidad estructura hacia la derecha
+	Torre			-> 	Cambio de velocidad gancho hacia abajo
+	Contrapesa		-> 	Cambio de velocidad enganche hacia la izquierda
+	Brazo-gancho	-> 	Cambio de velocidad enganche hacia la derecha
+	Gancho			-> 	Cambio de velocidad gancho hacia arriba

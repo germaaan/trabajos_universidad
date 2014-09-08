@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+    <FileVersion major="1" minor="6" />
+    <Project>
+        <Option title="Aspiradoras" />
+        <Option pch_mode="2" />
+        <Option compiler="gcc" />
+        <Build>
+            <Target title="default">
+                <Option output="AspiradorasTron" prefix_auto="1" extension_auto="1" />
+                <Option type="1" />
+                <Option compiler="gcc" />
+            </Target>
+        </Build>
+        <Linker>
+            <Add library="lib\libglu32.a" />
+            <Add library="lib\libglui.a" />
+            <Add library="lib\libglut32.a" />
+            <Add library="lib\libopengl32.a" />
+            <Add library="lib\libopenglut.a" />
+        </Linker>
+        <Unit filename="GUI.h" />
+        <Unit filename="GUI54097023.cpp" />
+        <Unit filename="environment.cpp" />
+        <Unit filename="environment.h" />
+        <Unit filename="include\glui.cpp" />
+        <Unit filename="include\glui_bitmap_img_data.cpp" />
+        <Unit filename="include\glui_bitmaps.cpp" />
+        <Unit filename="include\glui_button.cpp" />
+        <Unit filename="include\glui_column.cpp" />
+        <Unit filename="include\glui_control.cpp" />
+        <Unit filename="include\glui_edittext.cpp" />
+        <Unit filename="include\glui_filebrowser.cpp" />
+        <Unit filename="include\glui_internal.h" />
+        <Unit filename="include\glui_internal_control.h" />
+        <Unit filename="include\glui_list.cpp" />
+        <Unit filename="include\glui_node.cpp" />
+        <Unit filename="include\glui_panel.cpp" />
+        <Unit filename="include\glui_radio.cpp" />
+        <Unit filename="include\glui_rollout.cpp" />
+        <Unit filename="include\glui_scrollbar.cpp" />
+        <Unit filename="include\glui_spinner.cpp" />
+        <Unit filename="include\glui_statictext.cpp" />
+        <Unit filename="include\glui_string.cpp" />
+        <Unit filename="include\glui_window.cpp" />
+        <Unit filename="main.cpp" />
+        <Unit filename="player54097023.cpp" />
+        <Unit filename="player54097023.h" />
+        <Extensions>
+            <code_completion />
+            <debugger />
+            <envvars />
+        </Extensions>
+    </Project>
+</CodeBlocks_project_file>

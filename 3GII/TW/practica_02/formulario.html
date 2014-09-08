@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/formulario.css">
+    <title>PlaceHolder - Formulario de suscripción</title>
+    <meta name="description" content="Formulario de suscripción a PlaceHolder">
+    <meta name="author" content="German Martinez Maldonado">
+	
+	<script type="text/javascript" src="./js/validacionRegistro.js"></script>
+	<noscript>
+		Este navegador no es compatible con los scripts que se necesitan ejecutar para el correcto funcionamiento de la páginas, por favor actualice la versión de su navegador a una más reciente que sea compatible
+		<br><br>
+	</noscript>
+</head>
+
+<body>
+    
+<aside id="publi_sup">
+    <a href="http://www.pnsd.msc.es/">
+        <img class="img_publicidad_superior" src="./publicidad/publicidad_antidrogas.jpg" alt="publicidad_antidrogas"/>
+    </a>
+</aside>
+
+<aside id="publi_izq">
+    <a href="http://www.samsung.com/es/#home-appliances-home">
+        <img class="img_publicidad_lateral" src="./publicidad/publicidad_samsung.jpg" alt="publicidad_samsung"/>
+    </a>
+</aside>
+
+<aside id="publi_der">
+    <a href="http://www.donuts.es/">
+        <img class="img_publicidad_lateral" src="./publicidad/publicidad_donuts.jpg" alt="publicidad_donuts"/>
+    </a>
+</aside>
+
+<section id="cuerpo">
+    <header>
+        <a href="index.php">
+            <img id="img_cabecera" src="./index/cabecera.jpg" alt="cabecera"/>
+        </a>
+    </header>
+    
+    <nav>
+        <a href="./nacional.html">
+            <img src="./index/nacional.jpg" alt="nacional"/>
+        </a>
+        
+        <a href="./internacional.html">
+            <img src="./index/internacional.jpg" alt="internacional"/>
+        </a>
+        
+        <a href="./economia.html">
+            <img src="./index/economia.jpg" alt="economia"/>
+        </a>
+        
+        <a href="./deportes.html">
+            <img src="./index/deportes.jpg" alt="deportes"/>
+        </a>
+    </nav>
+	
+	<section id="formulario">
+		<p><h1> FORMULARIO DE ALTA EN WEB / SUBSCRIPCIÓN A VERSIÓN IMPRESA </h1></p>
+		<p><h3> Introduzca un nombre de usuario y un password para darse de alta en la web y poder introducir comentarios en las noticias. </h3>
+		   <h3> Todos los campos son obligatorios, a exceptión del "¿Cómo nos conoció? </h3><p>
+		<form action="./php/suscripcion.php" method=post >
+			<fieldset>
+				<legend> <h2> Datos del suscriptor </h2> </legend>
+				
+				<label for="campoUsuario"> Usuario: </label>				
+				<input type="text" id="campoUsuario" name="campoUsuario" maxlength="20" onblur="validaUsuario()"/>
+
+				<label for="campoPass"> Password: </label>
+				<input type="password" id="campoPass" name="campoPass" maxlength="20" onblur="validaPass()"/>
+				
+				<br/><br/>
+				
+				<label for="campoNombre"> Nombre: </label>				
+				<input type="text" id="campoNombre" name="campoNombre" maxlength="30" onblur="validaNombre()"/>
+
+				<label for="campoApellidos"> Apellidos: </label>
+				<input type="text" id="campoApellidos" name="campoApellidos" maxlength="100" onblur="validaApellidos()"/>
+						
+				<label for="campoCorreo"> Correo electrónico: </label>				
+				<input type="email" id="campoCorreo" name="campoCorreo" maxlength="100" onblur="validaCorreo()"/>
+						
+				<br/><br/>
+				
+				<label for="campoDireccion"> Dirección: </label>				
+				<input type="text" id="campoDireccion" name="campoDireccion" maxlength="100" onblur="validaDireccion()"/>
+
+				<label for="campoCodPostal"> Código Postal: </label>
+				<input type="text" id="campoCodPostal" name="campoCodPostal" maxlength="5" onblur="validaCodPostal()"/>
+						
+				<label for="campoCiudad"> Ciudad: </label>				
+				<input type="text" id="campoCiudad" name="campoCiudad" maxlength="50" onblur="validaCiudad()"/>
+						
+				<br/><br/>
+
+				<label for="campoTelefono"> Teléfono móvil: </label>				
+				<input type="tel" id="campoTelefono" name="campoTelefono" maxlength="12" onblur="validaTelefono()"/>
+				
+				<label for="campoEdad"> Edad: </label>
+				<input type="text" id="campoEdad" name="campoEdad" maxlength="2" onblur="validaEdad()"/>
+				
+				<datalist id="listaConocimiento">
+						<option value="Por Internet.">
+						<option value="Por televisión.">
+						<option value="Por un conocido.">
+				</datalist>
+				<label for="campoComoConoci"> ¿Cómo nos conoció? </label>
+				<input type="text" id="campoComoConoci" name="campoComoConoci" maxlength="100" list="listaConocimiento">
+				
+				<br/><br/>
+				
+				<input type="button" id="botonValidar" value="Validar datos" onclick="validarCampos()"/>
+				<input type="reset" id="botonReiniciar" value="Borrar datos" onclick="reactivaCampos()"/>
+				<input type="submit" id="botonEnviar" value="Enviar datos" disabled="true"/>
+			</fieldset>
+		</form>
+	</section>
+	
+ <footer>
+	 <h2> INFORMACIÓN DE CONTACTO </h2>
+	 <p> <address> C/ Periodista Daniel Saucedo Aranda, s/n, 18071, Granada </address> </br>
+		 <strong> Teléfono: </strong> 958 24 28 02 </br>
+		 <strong> Correo electrónico: </strong> <a href="mailto:contacto@placeholder.com"> contacto@placeholder.com </a> </br></br>
+		 <strong> <a href="./descripcion.pdf"> Cómo se hizo. </strong> </a>
+	 </p>
+ </footer>
+
+</section>
+
+</body>
+</html>
