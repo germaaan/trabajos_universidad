@@ -40,17 +40,17 @@ La evaluación de esta práctica dependerá de los siguientes elementos:
 * Deberá existir un directorio denominado **periodico** y un fichero **index.html** que contenga la portada. Las páginas relativas a las secciones se denominarán como la sección (**internacional.html, deportes.html, etc.**), y las noticias estarán almacenadas en directorios que se llamen como las secciones (**internacional, deportes, etc.**) y se nombrarán con las cuatro primeras palabras con sentido del titular separadas por guiones bajos y la fecha en el formato aaaammdd (**granada_pierde_ante_betis_20130405.html**). Las imágenes asociadas a una noticia irán ubicadas en un directorio con la misma denominación que la noticia (sin la extensión: **granada_pierde_ante_betis_20130405**).
 * En la zona de información general y de contacto, aparecerá un enlace denominado **“**cómo se hizo**”**, el cual apuntará a un fichero pdf, ubicado en el directorio **periodico**, que contendrá una descripción del trabajo realizado, haciendo especial énfasis en los aspectos innovadores de la práctica.
 
+* Estructura visual de la portada del periódico digital.
 ![pra01_img01](imagenes/pra01_img01.png)
-Figura 1: Estructura visual de la portada del periódico digital.
 
+* Estructura visual de cada sección del periódico digital.
 ![pra01_img02](imagenes/pra01_img02.png)
-Figura 2: Estructura visual de cada sección del periódico digital.
 
+* Estructura visual de una noticia del periódico digital.
 ![pra01_img03](imagenes/pra01_img03.png)
-Figura 3: Estructura visual de una noticia del periódico digital.
 
+* Estructura visual del formulario de suscripción al periódico impreso.
 ![pra01_img04](imagenes/pra01_img04.png)
-Figura 4: Estructura visual del formulario de suscripción al periódico impreso.
 
 
 ## Descripción

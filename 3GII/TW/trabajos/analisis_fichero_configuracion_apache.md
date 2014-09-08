@@ -16,7 +16,7 @@ Hay otras directivas que aunque pueden ser cambiadas, se recomienda que se deje 
 * **Timeout**: número de segundos a esperar antes de responder **“Tiempo de espera agotado”**. Por defecto son 300 segundos.
 * **KeepAlive**: permitir o no permitir conexiones persistentes, que consisten en permitir más de una petición por conexión. Por defecto activada con valor **“On”**, se puede desactivar indicando un valor **“Off”**.
 * **MaxKeepAliveRequests**: el máximo número de peticiones permitidas durante una conexión persistente. Si se indica el valor 0, el número de peticiones será ilimitado. Aun así, nos recomiendan dejar el valor por defecto 100, para así tener un mayor rendimiento.
-* **KeepAliveTimeou**t: número de segundos a esperar para la próxima solicitud del mismo cliente en la misma conexión. Por defecto es 5.
+* **KeepAliveTimeout**: número de segundos a esperar para la próxima solicitud del mismo cliente en la misma conexión. Por defecto es 5.
 
 Después de las directivas listadas arriba, nos encontramos la configuración de los módulos de multiprocesamiento (MPM), por defecto la configuración de los módulos incluidos es:
 
