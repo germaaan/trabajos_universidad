@@ -1,9 +1,9 @@
 Infraestructura Virtual
 =======================
-3º Grado en Ingeniería Informática 2013/2014
+4º Grado en Ingeniería Informática 2013/2014
 --------------------------------------------
 
-### [Repositorio ejercicios](https://github.com/germaaan/IV_GMM)
+* [Repositorio ejercicios](https://github.com/germaaan/IV_GMM)
 
 ### Prácticas
 * [Práctica 1: Creación y despliegue de una aplicación en un PaaS](https://github.com/germaaan/PRACTICA_01)
