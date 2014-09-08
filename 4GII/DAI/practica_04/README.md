@@ -43,7 +43,7 @@ Un recurso que puede facilitar mucho el uso de esta práctica es el Google Chart
 
 ### 3. Google Maps
 
-Google Maps es el archiconocido servicio de mapas interactivos online. Google ofrece la posibilidad de integrar mapas personalizados en nuestras pági- nas web mediante el uso de una API que se puede integrar en nuestro código HTML.
+Google Maps es el archiconocido servicio de mapas interactivos online. Google ofrece la posibilidad de integrar mapas personalizados en nuestras páginas web mediante el uso de una API que se puede integrar en nuestro código HTML.
 
 Al igual que con el servicio de gráficas, para páginas web se hace uso de JavaScript incrustado en nuestro HTML para definir los parámetros de un mapa, que luego se mostrará en un <div> de nuestra web.
 
@@ -51,7 +51,7 @@ Para comenzar a utilizar este servicio es muy recomendable seguir el tutorial qu
 
 En esta práctica se pide que nos familiaricemos con esta biblioteca y que seamos capaces de utilizar las características que nos parezcan más interesantes de la misma en nuestro sitio web, como por ejemplo: Añadir marcadores, textos o imágenes a un mapa (¿desde la base de datos?), uso de distintas capas en un mapa, modificar el interfaz de los mapas, uso de geolocalización, el servicio de “como llegar”, el servicio de elevación, de Street View, el servicio de mostrar panorámicas (al estilo Street View ), etc.
 
-Al igual que en el punto anterior, se valorará especialmente el uso de fun- cionalidades menos conocidas, la personalización llevada a cabo, originalidad, etc.
+Al igual que en el punto anterior, se valorará especialmente el uso de funcionalidades menos conocidas, la personalización llevada a cabo, originalidad, etc.
 
 ### 4. Introducción e Integración Sencilla de Twitter
 
@@ -59,7 +59,7 @@ Antes de lanzarnos a programar e implementar algún sevicio de Twitter en nuestr
 
 También es interesante leer un poco acerca de la plataforma Twitter. Debemos familiarizarnos con los conceptos: Tweet, User, Entity y Place.
 
-Twitter ofrece una manera muy simple con la que podemos empezar a in- crustar el servicio en nuestra página web. En la página Twitter for Websites se nos ofrecen algunas herramientas muy sencillas con las que podemos incrustar el “típico” boton de Twitter o incluso una caja de Tweets dinámicos.
+Twitter ofrece una manera muy simple con la que podemos empezar a incrustar el servicio en nuestra página web. En la página Twitter for Websites se nos ofrecen algunas herramientas muy sencillas con las que podemos incrustar el “típico” boton de Twitter o incluso una caja de Tweets dinámicos.
 
 Compruebe que efectivamente puede incrustar ambos tipos de objetos en su página web simpemente copiando el codigo HTML en el sitio oportuno.
 
