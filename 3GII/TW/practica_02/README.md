@@ -4,10 +4,8 @@ Tecnologías Web
 --------------------------------------------
 
 
-# Práctica Evaluable I: Creación de la web de un periódico digital
+# Práctica Evaluable II: Adaptación de la web de un periódico digital
 ### Germán Martínez Maldonado
-
-## Adaptación de la web de un periódico digital
 
 El objetivo de este segundo ejercicio evaluable es poner en práctica los conocimientos adquiridos de PHP y JavaScript, así como la capacidad para incorporar otros conceptos no estudiados en las clases de prácticas. El contexto será el periódico digital que se desarrolló en la primera práctica.
 
