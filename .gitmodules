@@ -16,3 +16,6 @@
 [submodule "4GII/IV/practica_04"]
 	path = 4GII/IV/practica_04
 	url = git@github.com:germaaan/Django_Traduccion
+[submodule "4GII/TE/practica_final"]
+	path = 4GII/TE/practica_final
+	url = git://github.com/josemlp91/NeuroWaveWar
