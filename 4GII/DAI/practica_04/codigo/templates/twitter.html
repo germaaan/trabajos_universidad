@@ -1,0 +1,28 @@
+## -*- coding: utf-8 -*-
+
+<%include file="cabecera.html"/>
+<%include file="menu.html"/>
+
+	<section id="cuerpo-twitter">
+		<p style="text-align:center; color:red;">
+			% if mensaje:
+				${mensaje}
+			% endif
+		</p>
+
+		<h1> Búsqueda de tweets por usuario en Twitter: </h1>
+		<form style="text-align:center; padding-left:380px" method="post" action="usuario_twitter">
+			${form.render()}
+		</form>
+		<h1> Búsqueda de tweets por palabra en Twitter: </h1>
+		<form style="text-align:center; padding-left:380px" method="post" action="palabra_twitter">
+			${form2.render()}
+		</form>
+		<h1> Búsqueda de tweets por ubicación en Twitter: </h1>
+		<form style="text-align:center; padding-left:380px" method="post" action="lugar_twitter">
+			${form3.render()}
+		</form>
+		<a href="/prueba_tweet_geolocalizado"> <h1> Prueba de tweet geolocalizado </h1> </a>
+	</section>
+
+<%include file="pie.html"/>

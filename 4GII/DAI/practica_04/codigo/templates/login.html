@@ -1,0 +1,23 @@
+## -*- coding: utf-8 -*-
+
+<%include file="cabecera.html"/>
+
+		<p style="color:red;">
+			% if mensaje:
+				${mensaje}
+			% endif
+		</p>
+		<p> 
+			Acceso de usuario:
+			<form name="main" method="post" action="login" style="margin-left:465px"> 
+				${form.render()}
+			</form>
+
+			</br>
+			<a href="/registro"> Registro de usuario </a>
+			</br></br>
+		</p>
+
+    </header>
+
+<%include file="pie.html"/>

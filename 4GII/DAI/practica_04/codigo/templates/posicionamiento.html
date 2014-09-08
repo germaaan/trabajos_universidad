@@ -1,0 +1,124 @@
+## -*- coding: utf-8 -*-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title> PRACTICA 4 </title>
+    	<meta name="description" content="PlaceHolder">
+    	<meta name="author" content="German Martinez Maldonado">
+	<style type="text/css">
+		header{
+			text-align:center;
+			background-color:#E5BC7A;
+			width:1288px;
+		}
+
+		#menu{
+			float:left;
+			margin-left:10px;
+			text-align:center;
+		   	background-color:#BDD2EF;
+			width:220px;
+		}
+
+		#map-canvas { 
+		   	margin-left:250px;
+			height:600px;
+			width:1027px;
+		}
+
+		.opcion{
+			border:1px solid #000000;
+		}
+
+
+		h1{
+			text-align:center;
+		}
+
+		footer{ 
+			margin-top: 20px;
+			color:white;
+			background-color:#E73343;
+			text-align:center;
+			width:1288px;
+		}
+	</style>
+
+	<script type="text/javascript"
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfI6QYtUqVp_BswQOF0F3FEDP1yVq1Oz8&sensor=true">
+	</script>
+
+	<script type="text/javascript">
+		function initialize() { 
+			var mapOptions = {center: new google.maps.LatLng(37.1773363, -3.5985571), zoom: 17, disableDefaultUI: true};
+
+        		var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+			
+			// Geolocalización HTML5
+			if(navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(function(position) {
+					var myLatlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+
+					var contentString = '<div id="content">'+
+						'<div id="bodyContent">'+
+			   			'<p>Ahora mismo<br>estás aquí.</p>' +
+						'</div>'+
+						'</div>';
+					
+					var infowindow = new google.maps.InfoWindow({
+						content: contentString
+					});
+
+					var marker = new google.maps.Marker({
+						position: myLatlng,
+						map: map,
+						title: 'Localización'
+					});
+					  
+					google.maps.event.addListener(marker, 'click', function() {
+						infowindow.open(map,marker);
+					});
+
+				  	map.setCenter(myLatlng);
+				}, function() {	handleNoGeolocation(true);
+							  });
+			} else {
+				// Navegador no soporta geolocalización
+				handleNoGeolocation(false);
+			}
+		}
+
+		function handleNoGeolocation(errorFlag) {
+			if (errorFlag) {
+				var content = 'Error: El servicio de geolocalización falló.';
+			} else {
+				var content = 'Error: Tu navegador no soporta geolocalización.';
+			}
+
+			var options = {
+				map: map,
+				position: new google.maps.LatLng(60, 105),
+				content: content
+			};
+
+			var infowindow = new google.maps.InfoWindow(options);
+			map.setCenter(options.position);
+		}
+
+		google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+</head>
+
+<body>
+    <header>
+		<img id="img_cabecera" src="../static/cabecera.jpg" alt="cabecera"/>
+		<h1> PlaceHolder </h1>
+		<h3> Periodico digital </h3>
+<%include file="menu.html"/>
+
+	<section id="map-canvas">
+	</section>
+
+<%include file="pie.html"/>

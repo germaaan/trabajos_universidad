@@ -1,0 +1,96 @@
+		<h1> Últimos ${numero} tweet(s): </h1> 
+		<ul>
+			<% cont = 0 %>
+
+			% for tweet in timeline:			
+				<%
+					nombre = tweet.author.name
+					id = tweet.author.screen_name
+					fecha = tweet.created_at
+					texto = tweet.text
+					es_rt = False
+					hay_enlace = False
+				%>
+				<li> <strong> ${fecha}. @${id}: </strong> ${texto} </li>
+				<ul style="padding-left:30px">
+					<%
+						respuesta = tweet.in_reply_to_screen_name
+						retweets = tweet.retweet_count
+						favoritos = tweet.favorite_count
+						origen = tweet.source
+						lugar = tweet.place
+
+						if str(lugar) != "None":
+							nombre_lugar = tweet.place.full_name
+							pais = tweet.place.country
+
+						coordenadas = tweet.geo
+
+						if str(coordenadas) != "None":
+							nulo,nulo,nulo,latitud,longitud = str(coordenadas).split()
+							latitud = latitud.strip('[,')
+							longitud = longitud.strip(']}')
+						
+						busqueda = texto.find(':', 0, len(texto))
+
+						if busqueda != -1:
+							inicio, resto = texto.split(':',1)
+							rt, autor = inicio.split(' ',1)
+
+							if rt == "RT":
+								es_rt = True
+								id_autor = autor.lstrip('@');
+								nombre_autor = api.get_user(id_autor).name
+
+						busqueda = texto.find('http:', 0, len(texto))
+
+						if busqueda != -1:
+							resto, enlace = texto.split('http:',1)
+							enlace = "http:" + enlace
+							
+							busqueda = enlace.find(' ', 0, len(enlace))
+
+							if busqueda != -1:
+								enlace, resto = enlace.split(' ',1)
+
+							hay_enlace = True
+					%>
+					<li> <strong> Publicado por: </strong> ${nombre} (<a href="https://twitter.com/${id}">@${id}</a>) </li>
+					% if es_rt == True:
+						<li> <strong> Retweet a: </strong> ${nombre_autor} (<a href="https://twitter.com/${autor}">${autor}</a>) </li>
+					% endif
+					% if str(respuesta) != "None":
+						<% nombre_respuesta = api.get_user(respuesta).name %>
+						<li> <strong> Respuesta a: </strong> ${nombre_respuesta} (<a href="https://twitter.com/${respuesta}">@${respuesta}</a>) </li>
+					% endif
+					% if hay_enlace == True:
+						<li> <strong> Enlace: </strong> <a href="${enlace}"> ${enlace} </a> </li>
+					% endif
+					% if retweets > 0:
+						<li> <strong> Retweets: </strong> ${retweets} </li>
+					% endif
+					% if favoritos > 0:
+						<li> <strong> Favoritos: </strong> ${favoritos} </li>
+					% endif
+					<li> <strong> Enviado desde: </strong> ${origen} </li>
+					% if str(lugar) != "None":
+						<li> <strong> Lugar: </strong> ${nombre_lugar} (${pais})</li>
+					% endif
+					% if str(coordenadas) != "None":
+						<li> <strong> Coordenadas: </strong> </li>
+							<ul style="padding-left:30px">
+								<li> <strong> Latitud: </strong> ${latitud} </li>
+								<li> <strong> Longitud: </strong> ${longitud} </li>
+								<% 
+									tt = timeline[cont].text
+									tt = tt.lstrip('"');
+								%>
+								<a href="/maps_Twitter?latitud=${latitud}&longitud=${longitud}&nombre=${nombre}&id=${id}&fecha=${fecha}&texto=${tt}"> Mostrar mapa </a>
+							</ul>
+					% endif	
+					<br>
+				</ul>
+
+			<% cont += 1 %>
+			% endfor
+		</ul>

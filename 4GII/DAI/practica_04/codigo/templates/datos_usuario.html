@@ -1,0 +1,20 @@
+## -*- coding: utf-8 -*-
+
+<%include file="cabecera.html"/>
+<%include file="menu.html"/>
+
+	<section id="cuerpo-otro">
+		<h1 style="font-size:35px;">Datos introducidos</h1>
+		<ul id="lista">	
+			<li class="datos"> <strong>Usuario:</strong> ${sesion.usuario} </li>
+			<li class="datos"> <strong>Nombre:</strong> ${nombre} </li>
+			<li class="datos"> <strong>Apellidos:</strong> ${apellidos} </li>
+			<li class="datos"> <strong>Correo Electrónico:</strong> ${correo} </li>
+			<li class="datos"> <strong>Número de VISA:</strong> ${visa} </li>
+			<li class="datos"> <strong>Fecha de nacimiento:</strong> ${fecha_nacimiento} </li>
+			<li class="datos"> <strong>Dirección:</strong> ${direccion} </li>
+			<li class="datos"> <strong>Forma de pago:</strong> ${pago} </li>
+		</ul>
+	</section>
+
+<%include file="pie.html"/>

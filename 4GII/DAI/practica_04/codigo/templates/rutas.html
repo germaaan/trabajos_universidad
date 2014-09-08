@@ -1,0 +1,173 @@
+## -*- coding: utf-8 -*-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title> PRACTICA 4 </title>
+    	<meta name="description" content="PlaceHolder">
+    	<meta name="author" content="German Martinez Maldonado">
+	<style type="text/css">
+		header{
+			text-align:center;
+			background-color:#E5BC7A;
+			width:1288px;
+		}
+
+		#menu{
+			float:left;
+			margin-left:10px;
+			text-align:center;
+		   	background-color:#BDD2EF;
+			width:220px;
+		}
+
+		#map-canvas { 
+		   	margin-left:250px;
+			height:600px;
+			width:1027px;
+		}
+
+		.opcion{
+			border:1px solid #000000;
+		}
+
+
+		h1{
+			text-align:center;
+		}
+
+		footer{ 
+			margin-top: 20px;
+			color:white;
+			background-color:#E73343;
+			text-align:center;
+			width:1288px;
+		}
+	</style>
+
+	<script type="text/javascript"
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfI6QYtUqVp_BswQOF0F3FEDP1yVq1Oz8&sensor=true">
+	</script>
+
+	<script type="text/javascript">
+		var directionsDisplay;
+		var directionsService = new google.maps.DirectionsService();
+		var casa = new google.maps.LatLng(37.1777555, -3.6115413);
+		var universidad = new google.maps.LatLng(37.197014, -3.624251);
+		var map;
+
+		function APie(controlDiv, map) {
+
+		  controlDiv.style.padding = '5px';
+
+		  var controlUI = document.createElement('div');
+		  controlUI.style.backgroundColor = 'white';
+		  controlUI.style.borderStyle = 'solid';
+		  controlUI.style.borderWidth = '2px';
+		  controlUI.style.cursor = 'pointer';
+		  controlUI.style.textAlign = 'center';
+		  controlUI.title = 'Genera una ruta para recorrer a pie.';
+		  controlDiv.appendChild(controlUI);
+
+		  var controlText = document.createElement('div');
+		  controlText.style.fontFamily = 'Arial,sans-serif';
+		  controlText.style.fontSize = '15px';
+		  controlText.style.paddingLeft = '5px';
+		  controlText.style.paddingRight = '5px';
+		  controlText.innerHTML = '<strong>A pie</strong>';
+		  controlUI.appendChild(controlText);
+
+		  google.maps.event.addDomListener(controlUI, 'click', function() {
+			calcRutaAPie();
+		  });
+		}
+
+		function Conduciendo(controlDiv, map) {
+
+		  controlDiv.style.padding = '5px';
+
+		  var controlUI = document.createElement('div');
+		  controlUI.style.backgroundColor = 'white';
+		  controlUI.style.borderStyle = 'solid';
+		  controlUI.style.borderWidth = '2px';
+		  controlUI.style.cursor = 'pointer';
+		  controlUI.style.textAlign = 'center';
+		  controlUI.title = 'Genera una ruta para recorrer conduenciendo.';
+		  controlDiv.appendChild(controlUI);
+
+		  var controlText = document.createElement('div');
+		  controlText.style.fontFamily = 'Arial,sans-serif';
+		  controlText.style.fontSize = '15px';
+		  controlText.style.paddingLeft = '5px';
+		  controlText.style.paddingRight = '5px';
+		  controlText.innerHTML = '<strong>Conduciendo</strong>';
+		  controlUI.appendChild(controlText);
+
+		  google.maps.event.addDomListener(controlUI, 'click', function() {
+			calcRutaConduciendo();
+		  });
+		}
+
+		function initialize() { 
+			directionsDisplay = new google.maps.DirectionsRenderer();
+			var mapOptions = {
+				zoom:17,
+				center: casa,
+				disableDefaultUI: true
+			}
+			map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+			directionsDisplay.setMap(map);
+
+			var aPieDiv = document.createElement('div');
+			var aPieTrafico = new APie(aPieDiv, map);
+			var conduciendoDiv = document.createElement('div');
+			var conduciendoTrafico = new Conduciendo(conduciendoDiv, map);
+
+			aPieDiv.index = 1;
+			map.controls[google.maps.ControlPosition.TOP_RIGHT].push(aPieDiv);
+			conduciendoDiv.index = 2;
+			map.controls[google.maps.ControlPosition.TOP_RIGHT].push(conduciendoDiv);
+		}
+
+		function calcRutaConduciendo() {
+			var request = {
+				origin:casa,
+				destination:universidad,
+				travelMode: google.maps.TravelMode.DRIVING
+			};
+			directionsService.route(request, function(response, status) {
+			if (status == google.maps.DirectionsStatus.OK) {
+				directionsDisplay.setDirections(response);
+			}
+		  });
+		}
+
+		function calcRutaAPie() {
+			var request = {
+				origin:casa,
+				destination:universidad,
+				travelMode: google.maps.TravelMode.WALKING
+			};
+			directionsService.route(request, function(response, status) {
+			if (status == google.maps.DirectionsStatus.OK) {
+				directionsDisplay.setDirections(response);
+			}
+		  });
+		}
+
+		google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+</head>
+
+<body>
+    <header>
+		<img id="img_cabecera" src="../static/cabecera.jpg" alt="cabecera"/>
+		<h1> PlaceHolder </h1>
+		<h3> Periodico digital </h3>
+<%include file="menu.html"/>
+
+	<section id="map-canvas">
+	</section>
+
+<%include file="pie.html"/>

@@ -1,0 +1,109 @@
+## -*- coding: utf-8 -*-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title> PRACTICA 4 </title>
+    	<meta name="description" content="PlaceHolder">
+    	<meta name="author" content="German Martinez Maldonado">
+	<style type="text/css">
+		header{
+			text-align:center;
+			background-color:#E5BC7A;
+			width:1288px;
+		}
+
+		#menu{
+			float:left;
+			margin-left:10px;
+			text-align:center;
+		   	background-color:#BDD2EF;
+			width:220px;
+		}
+
+		#chart_div { 
+		   	margin-left:250px;
+		}
+
+		.opcion{
+			border:1px solid #000000;
+		}
+
+
+		h1{
+			text-align:center;
+		}
+
+		footer{ 
+			margin-top: 20px;
+			color:white;
+			background-color:#E73343;
+			text-align:center;
+			width:1288px;
+		}
+	</style>
+
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+	<script type="text/javascript">
+       	var options = {'title':'Contador de visitas', 'width':900, 'height':500};
+		google.load('visualization', '1.0', {'packages':['corechart']});
+
+		function drawPieChart() {
+			<%
+				inicio = cursor[0]["inicio"]
+				nacional = cursor[0]["nacional"]
+				internacional = cursor[0]["internacional"]
+				tecnologia = cursor[0]["tecnologia"]
+				deportes = cursor[0]["deportes"]
+				rss = cursor[0]["rss"]
+				charts = cursor[0]["charts"]
+				maps = cursor[0]["maps"]
+				twitter = cursor[0]["twitter"]
+			%>
+
+			var data = new google.visualization.DataTable();
+			data.addColumn('string', 'Topping');
+			data.addColumn('number', 'Slices');
+			data.addRows([
+				['Inicio', ${inicio}],
+				['Nacional', ${nacional}],
+				['Internacional', ${internacional}],
+				['Tecnologia', ${tecnologia}],
+				['Deportes', ${deportes}],
+				['RSS', ${rss}],
+				['Charts', ${charts}],
+				['Maps', ${maps}],
+				['Twitter', ${twitter}]
+			]);
+
+			var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+
+			function selectHandler() {
+				var selectedItem = chart.getSelection()[0];
+					if (selectedItem) {
+						var topping = data.getValue(selectedItem.row, 0);
+						var sl = data.getValue(selectedItem.row, 1);
+						alert('Seleccionado: ' + topping + ". Valor: " + sl);
+					}
+			}
+
+        	google.visualization.events.addListener(chart, 'select', selectHandler);  
+			chart.draw(data, options);
+		}
+
+		google.setOnLoadCallback(drawPieChart);
+	</script>
+</head>
+
+<body>
+    <header>
+		<img id="img_cabecera" src="../static/cabecera.jpg" alt="cabecera"/>
+		<h1> PlaceHolder </h1>
+		<h3> Periodico digital </h3>
+<%include file="menu.html"/>
+
+	<section id="chart_div">
+	</section>
+
+<%include file="pie.html"/>

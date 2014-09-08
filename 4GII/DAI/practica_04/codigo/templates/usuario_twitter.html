@@ -1,0 +1,23 @@
+## -*- coding: utf-8 -*-
+
+<%include file="cabecera.html"/>
+<%include file="menu.html"/>
+
+	<section id="cuerpo-twitter">
+		<h1> Búsqueda por usuario en Twitter: </h1>
+		<ul style="padding-left:375px;">	
+			<%
+				id_usuario = user.screen_name
+				nombre_usuario = user.name
+				fecha_usuario = user.created_at
+			%>
+			<li> <strong> Identificador: </strong> <a href="https://twitter.com/${id_usuario}"> @${id_usuario} </a></li>
+			<li> <strong> Nombre: </strong> ${nombre_usuario} </li>
+			<li> <strong> Fecha de creación:</strong> ${fecha_usuario} </li>
+		</ul>
+		
+<%include file="analiza_tweet.html"/>
+
+	</section>
+
+<%include file="pie.html"/>

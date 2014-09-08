@@ -1,0 +1,53 @@
+		<p>
+			Bienvenido, ${sesion.usuario}
+			<br/><br/>
+			<a href="/logout"> Logout </a>
+			<br/><br/>
+		<p>
+	</header>
+
+	<section id="menu">
+		<nav class="opcion"> <a href="/datos_usuario"> Ver datos usuario </a> </nav> 
+		<nav class="opcion"> <a href="/modificar"> Modificar datos usuario </a> </nav> 
+		<nav class="opcion"> <br/> </nav>
+		<nav class="opcion"> <a href="/"> Inicio </a> </nav> 
+		<nav class="opcion"> <a href="/Nacional"> Nacional </a> </nav> 
+		<nav class="opcion"> <a href="/Internacional"> Internacional </a> </nav>
+		<nav class="opcion"> <a href="/Tecnologia"> Tecnologia </a> </nav>
+		<nav class="opcion"> <a href="/Deportes"> Deportes </a> </nav>
+		<nav class="opcion"> <br/> </nav>
+		<nav class="opcion"> <a href="/RSS"> RSS </a> </nav>
+		<nav class="opcion"> <a href="/Charts"> Charts </a> </nav>
+		<nav class="opcion"> <a href="/Maps"> Maps </a> </nav>
+		<nav class="opcion"> <a href="/Twitter"> Twitter </a> </nav>
+		<nav class="opcion"> <br/> </nav>
+		<nav class="opcion"> ÚLTIMAS VISITAS: </nav>
+		<nav class="opcion">		
+			% if sesion.link1 == "Inicio":
+				<a href="/"> Inicio </a>
+			% elif sesion.link1:
+				<a href="/${sesion.link1}"> ${sesion.link1} </a>
+			% else:
+				<br/>
+			% endif	
+		</nav>
+		<nav class="opcion">		
+			% if sesion.link2 == "Inicio":
+				<a href="/"> Inicio </a>
+			% elif sesion.link2:
+				<a href="/${sesion.link2}"> ${sesion.link2} </a>
+			% else:
+				<br/>
+			% endif	
+		</nav>
+		<nav class="opcion">		
+			% if sesion.link3 == "Inicio":
+				<a href="/"> Inicio </a>
+			% elif sesion.link3:
+				<a href="/${sesion.link3}"> ${sesion.link3} </a>
+			% else:
+				<br/>
+			% endif	
+		</nav>
+		<nav class="opcion"> <br/> </nav>
+	</section>

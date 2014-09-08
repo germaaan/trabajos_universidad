@@ -1,0 +1,26 @@
+## -*- coding: utf-8 -*-
+
+<%include file="cabecera.html"/>
+<%include file="menu.html"/>
+
+	<section id="cuerpo-otro">
+		<h1> Noticias RSS: </h1>
+		<ul style="padding-left:200px">
+		% for i in range(15):
+			<%
+				enlace = rss.entries[i].link
+				titulo = rss.entries[i].title
+				dia = str(rss.entries[i].published_parsed.tm_mday)
+				mes = str(rss.entries[i].published_parsed.tm_mon)
+				anio = str(rss.entries[i].published_parsed.tm_year)
+				hora = str(rss.entries[i].published_parsed.tm_hour)
+				minuto = str(rss.entries[i].published_parsed.tm_min)
+				segundo = str(rss.entries[i].published_parsed.tm_sec)
+				fecha = dia+"/"+mes+"/"+anio+" "+hora+":"+minuto+":"+segundo
+			%>
+			<li> <strong> <a href="${enlace}"> ${titulo}</a></strong>. ${fecha} </li>
+		% endfor
+		</ul>
+	</section>
+
+<%include file="pie.html"/>

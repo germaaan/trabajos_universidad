@@ -1,0 +1,47 @@
+		<p>
+			Bienvenido, ${usuario}
+			<br/><br/>
+			<a href="/logout"> Logout </a>
+			<br/><br/>
+		<p>
+	</header>
+
+	<section id="menu">
+		<nav class="opcion"> <a href="/datos_usuario"> Ver datos usuario </a> </nav> 
+		<nav class="opcion"> <a href="/modificar"> Modificar datos usuario </a> </nav> 
+		<nav class="opcion"> <br/> </nav>
+		<nav class="opcion"> <a href="/"> Inicio </a> </nav> 
+		<nav class="opcion"> <a href="/Nacional"> Nacional </a> </nav> 
+		<nav class="opcion"> <a href="/Internacional"> Internacional </a> </nav>
+		<nav class="opcion"> <a href="/Tecnologia"> Tecnologia </a> </nav>
+		<nav class="opcion"> <a href="/Deportes"> Deportes </a> </nav>
+		<nav class="opcion"> <br/> </nav>
+		<nav class="opcion"> ÚLTIMAS VISITAS: </nav>
+		<nav class="opcion">		
+			% if link1 == "inicio":
+				<a href="/"> Inicio </a>
+			% elif link1:
+				<a href="/${link1}"> ${link1} </a>
+			% else:
+				<br/>
+			% endif	
+		</nav>
+		<nav class="opcion">		
+			% if link2 == "inicio":
+				<a href="/"> Inicio </a>
+			% elif link2:
+				<a href="/${link2}"> ${link2} </a>
+			% else:
+				<br/>
+			% endif	
+		</nav>
+		<nav class="opcion">		
+			% if link3 == "inicio":
+				<a href="/"> Inicio </a>
+			% elif link3:
+				<a href="/${link3}"> ${link3} </a>
+			% else:
+				<br/>
+			% endif	
+		</nav>
+	</section>

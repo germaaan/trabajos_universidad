@@ -1,0 +1,115 @@
+## -*- coding: utf-8 -*-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title> PRACTICA 4 </title>
+    	<meta name="description" content="PlaceHolder">
+    	<meta name="author" content="German Martinez Maldonado">
+	<style type="text/css">
+		header{
+			text-align:center;
+			background-color:#E5BC7A;
+			width:1288px;
+		}
+
+		#menu{
+			float:left;
+			margin-left:10px;
+			text-align:center;
+		   	background-color:#BDD2EF;
+			width:220px;
+		}
+
+		#map-canvas { 
+		   	margin-left:250px;
+			height:600px;
+			width:1027px;
+		}
+
+		.opcion{
+			border:1px solid #000000;
+		}
+
+
+		h1{
+			text-align:center;
+		}
+
+		footer{ 
+			margin-top: 20px;
+			color:white;
+			background-color:#E73343;
+			text-align:center;
+			width:1288px;
+		}
+	</style>
+
+	<script type="text/javascript"
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfI6QYtUqVp_BswQOF0F3FEDP1yVq1Oz8&sensor=true">
+	</script>
+
+	<script type="text/javascript">
+		function recuperaValor(campo) {
+			var RE = new RegExp("[&?]" + campo + "=([^&]*)&");
+			var href = location.href + "&";
+
+			if( RE.test(href) ) {
+				RE.exec(href);
+				return unescape(RegExp.$1);
+			}
+		}
+
+		function initialize() {
+			var latitud = recuperaValor("latitud");
+			var longitud = recuperaValor("longitud");
+			var fecha = recuperaValor("fecha");
+			var nombre = recuperaValor("nombre");
+			var id = recuperaValor("id");
+			var texto = recuperaValor("texto");
+
+			var myLatlng = new google.maps.LatLng(latitud,longitud);
+
+			var mapOptions = {zoom: 17, center: myLatlng};
+
+			var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+			var contentString = '<div id="content">'+
+				'<div id="bodyContent">'+
+			   	'<p><strong>' + fecha + ' ' + nombre + '</strong> (' + id + ') escribió: </p>' + 
+				'<p>' + texto + '</p>' +
+				'</div>'+
+				'</div>';
+
+			var infowindow = new google.maps.InfoWindow({
+				content: contentString
+			});
+
+			var marker = new google.maps.Marker({
+				position: myLatlng,
+				map: map,
+				title: 'Twitter'
+			});
+			  
+			google.maps.event.addListener(marker, 'click', function() {
+				infowindow.open(map,marker);
+			});
+		}
+
+		google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+
+</head>
+
+<body>
+    <header>
+		<img id="img_cabecera" src="../static/cabecera.jpg" alt="cabecera"/>
+		<h1> PlaceHolder </h1>
+		<h3> Periodico digital </h3>
+<%include file="menu.html"/>
+
+	<section id="map-canvas"">
+	</section>
+
+<%include file="pie.html"/>

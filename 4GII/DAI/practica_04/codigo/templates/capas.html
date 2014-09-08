@@ -1,0 +1,345 @@
+## -*- coding: utf-8 -*-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title> PRACTICA 4 </title>
+    	<meta name="description" content="PlaceHolder">
+    	<meta name="author" content="German Martinez Maldonado">
+	<style type="text/css">
+		header{
+			text-align:center;
+			background-color:#E5BC7A;
+			width:1288px;
+		}
+
+		#menu{
+			float:left;
+			margin-left:10px;
+			text-align:center;
+		   	background-color:#BDD2EF;
+			width:220px;
+		}
+
+		#map-canvas { 
+		   	margin-left:250px;
+			height:600px;
+			width:1027px;
+		}
+
+		.opcion{
+			border:1px solid #000000;
+		}
+
+
+		h1{
+			text-align:center;
+		}
+
+		footer{ 
+			margin-top: 20px;
+			color:white;
+			background-color:#E73343;
+			text-align:center;
+			width:1288px;
+		}
+	</style>
+
+	<script type="text/javascript"
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfI6QYtUqVp_BswQOF0F3FEDP1yVq1Oz8&sensor=true">
+	</script>
+
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=weather"></script>
+
+	<script type="text/javascript">
+		var map;
+		var granada = new google.maps.LatLng(37.1773363, -3.5985571);
+		var trafficLayer = new google.maps.TrafficLayer();
+		var bicyclingLayer = new google.maps.BicyclingLayer();
+		var transitLayer = new google.maps.TransitLayer();
+		var weatherLayer = new google.maps.weather.WeatherLayer({
+			temperatureUnits: google.maps.weather.TemperatureUnit.CELSIUS
+		});
+		var cloudLayer = new google.maps.weather.CloudLayer();
+
+		function CambiaNormal(controlDiv, map) {
+
+		  controlDiv.style.padding = '5px';
+
+		  var controlUI = document.createElement('div');
+		  controlUI.style.backgroundColor = 'white';
+		  controlUI.style.borderStyle = 'solid';
+		  controlUI.style.borderWidth = '2px';
+		  controlUI.style.cursor = 'pointer';
+		  controlUI.style.textAlign = 'center';
+		  controlUI.title = 'Cambia tipo de mapa a mapa de carretera predeterminado';
+		  controlDiv.appendChild(controlUI);
+
+		  var controlText = document.createElement('div');
+		  controlText.style.fontFamily = 'Arial,sans-serif';
+		  controlText.style.fontSize = '15px';
+		  controlText.style.paddingLeft = '5px';
+		  controlText.style.paddingRight = '5px';
+		  controlText.innerHTML = '<strong>Mapa</strong>';
+		  controlUI.appendChild(controlText);
+
+		  google.maps.event.addDomListener(controlUI, 'click', function() {
+			map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
+		  });
+		}
+
+		function CambiaSatelite(controlDiv, map) {
+
+		  controlDiv.style.padding = '5px';
+
+		  var controlUI = document.createElement('div');
+		  controlUI.style.backgroundColor = 'white';
+		  controlUI.style.borderStyle = 'solid';
+		  controlUI.style.borderWidth = '2px';
+		  controlUI.style.cursor = 'pointer';
+		  controlUI.style.textAlign = 'center';
+		  controlUI.title = 'Cambia tipo de mapa a mapa con imágenes de satélite de Google Earth';
+		  controlDiv.appendChild(controlUI);
+
+		  var controlText = document.createElement('div');
+		  controlText.style.fontFamily = 'Arial,sans-serif';
+		  controlText.style.fontSize = '15px';
+		  controlText.style.paddingLeft = '5px';
+		  controlText.style.paddingRight = '5px';
+		  controlText.innerHTML = '<strong>Satelite</strong>';
+		  controlUI.appendChild(controlText);
+
+		  google.maps.event.addDomListener(controlUI, 'click', function() {
+			map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
+		  });
+		}
+
+		function CambiaHibrido(controlDiv, map) {
+
+		  controlDiv.style.padding = '5px';
+
+		  var controlUI = document.createElement('div');
+		  controlUI.style.backgroundColor = 'white';
+		  controlUI.style.borderStyle = 'solid';
+		  controlUI.style.borderWidth = '2px';
+		  controlUI.style.cursor = 'pointer';
+		  controlUI.style.textAlign = 'center';
+		  controlUI.title = 'Cambia tipo de mapa a mapa híbrido normal/satélite';
+		  controlDiv.appendChild(controlUI);
+
+		  var controlText = document.createElement('div');
+		  controlText.style.fontFamily = 'Arial,sans-serif';
+		  controlText.style.fontSize = '15px';
+		  controlText.style.paddingLeft = '5px';
+		  controlText.style.paddingRight = '5px';
+		  controlText.innerHTML = '<strong>Hibrido</strong>';
+		  controlUI.appendChild(controlText);
+
+		  google.maps.event.addDomListener(controlUI, 'click', function() {
+			map.setMapTypeId(google.maps.MapTypeId.HYBRID);
+		  });
+		}
+
+		function CambiaTerreno(controlDiv, map) {
+
+		  controlDiv.style.padding = '5px';
+
+		  var controlUI = document.createElement('div');
+		  controlUI.style.backgroundColor = 'white';
+		  controlUI.style.borderStyle = 'solid';
+		  controlUI.style.borderWidth = '2px';
+		  controlUI.style.cursor = 'pointer';
+		  controlUI.style.textAlign = 'center';
+		  controlUI.title = 'Cambia tipo de mapa a mapa físico con información del relieve';
+		  controlDiv.appendChild(controlUI);
+
+		  var controlText = document.createElement('div');
+		  controlText.style.fontFamily = 'Arial,sans-serif';
+		  controlText.style.fontSize = '15px';
+		  controlText.style.paddingLeft = '5px';
+		  controlText.style.paddingRight = '5px';
+		  controlText.innerHTML = '<strong>Terreno</strong>';
+		  controlUI.appendChild(controlText);
+
+		  google.maps.event.addDomListener(controlUI, 'click', function() {
+			map.setMapTypeId(google.maps.MapTypeId.TERRAIN);
+		  });
+		}
+
+		function AplicaTrafico(controlDiv, map) {
+
+		  controlDiv.style.padding = '5px';
+
+		  var controlUI = document.createElement('div');
+		  controlUI.style.backgroundColor = 'white';
+		  controlUI.style.borderStyle = 'solid';
+		  controlUI.style.borderWidth = '2px';
+		  controlUI.style.cursor = 'pointer';
+		  controlUI.style.textAlign = 'center';
+		  controlUI.title = 'Aplica capa de información sobre tráfico';
+		  controlDiv.appendChild(controlUI);
+
+		  var controlText = document.createElement('div');
+		  controlText.style.fontFamily = 'Arial,sans-serif';
+		  controlText.style.fontSize = '15px';
+		  controlText.style.paddingLeft = '5px';
+		  controlText.style.paddingRight = '5px';
+		  controlText.innerHTML = '<strong>Tráfico</strong>';
+		  controlUI.appendChild(controlText);
+
+		  google.maps.event.addDomListener(controlUI, 'click', function() {
+			transitLayer.setMap(null);
+			bicyclingLayer.setMap(null);
+			weatherLayer.setMap(null);
+		  	cloudLayer.setMap(null);
+			trafficLayer.setMap(map);
+		  });
+		}
+
+		function AplicaTransporte(controlDiv, map) {
+
+		  controlDiv.style.padding = '5px';
+
+		  var controlUI = document.createElement('div');
+		  controlUI.style.backgroundColor = 'white';
+		  controlUI.style.borderStyle = 'solid';
+		  controlUI.style.borderWidth = '2px';
+		  controlUI.style.cursor = 'pointer';
+		  controlUI.style.textAlign = 'center';
+		  controlUI.title = 'Aplica capa de información sobre transporte público';
+		  controlDiv.appendChild(controlUI);
+
+		  var controlText = document.createElement('div');
+		  controlText.style.fontFamily = 'Arial,sans-serif';
+		  controlText.style.fontSize = '15px';
+		  controlText.style.paddingLeft = '5px';
+		  controlText.style.paddingRight = '5px';
+		  controlText.innerHTML = '<strong>Transporte</strong>';
+		  controlUI.appendChild(controlText);
+
+		  google.maps.event.addDomListener(controlUI, 'click', function() {
+			bicyclingLayer.setMap(null);
+			weatherLayer.setMap(null);
+		  	cloudLayer.setMap(null);
+			trafficLayer.setMap(null);
+			transitLayer.setMap(map);
+		  });
+		}
+
+		function AplicaBicicletas(controlDiv, map) {
+
+		  controlDiv.style.padding = '5px';
+
+		  var controlUI = document.createElement('div');
+		  controlUI.style.backgroundColor = 'white';
+		  controlUI.style.borderStyle = 'solid';
+		  controlUI.style.borderWidth = '2px';
+		  controlUI.style.cursor = 'pointer';
+		  controlUI.style.textAlign = 'center';
+		  controlUI.title = 'Aplica capa de información sobre bicicletas';
+		  controlDiv.appendChild(controlUI);
+
+		  var controlText = document.createElement('div');
+		  controlText.style.fontFamily = 'Arial,sans-serif';
+		  controlText.style.fontSize = '15px';
+		  controlText.style.paddingLeft = '5px';
+		  controlText.style.paddingRight = '5px';
+		  controlText.innerHTML = '<strong>Bicicletas</strong>';
+		  controlUI.appendChild(controlText);
+
+		  google.maps.event.addDomListener(controlUI, 'click', function() {
+			weatherLayer.setMap(null);
+		  	cloudLayer.setMap(null);
+			trafficLayer.setMap(null);
+			transitLayer.setMap(null);
+			bicyclingLayer.setMap(map);
+		  });
+		}
+
+		function AplicaMeteorologica(controlDiv, map) {
+
+		  controlDiv.style.padding = '5px';
+
+		  var controlUI = document.createElement('div');
+		  controlUI.style.backgroundColor = 'white';
+		  controlUI.style.borderStyle = 'solid';
+		  controlUI.style.borderWidth = '2px';
+		  controlUI.style.cursor = 'pointer';
+		  controlUI.style.textAlign = 'center';
+		  controlUI.title = 'Aplica capa de información meteorológica';
+		  controlDiv.appendChild(controlUI);
+
+		  var controlText = document.createElement('div');
+		  controlText.style.fontFamily = 'Arial,sans-serif';
+		  controlText.style.fontSize = '15px';
+		  controlText.style.paddingLeft = '5px';
+		  controlText.style.paddingRight = '5px';
+		  controlText.innerHTML = '<strong>Meteorológica</strong>';
+		  controlUI.appendChild(controlText);
+
+		  google.maps.event.addDomListener(controlUI, 'click', function() {
+			trafficLayer.setMap(null);
+			transitLayer.setMap(null);
+			bicyclingLayer.setMap(null);
+			weatherLayer.setMap(map);
+		  	cloudLayer.setMap(map);
+		  });
+		}
+
+		function initialize() {
+			var mapOptions = {center: granada, zoom: 15, disableDefaultUI: true};
+
+			map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+			var aplicaTraficoDiv = document.createElement('div');
+			var aplicaTrafico = new AplicaTrafico(aplicaTraficoDiv, map);
+			var aplicaTransporteDiv = document.createElement('div');
+			var aplicaTransporte = new AplicaTransporte(aplicaTransporteDiv, map);
+			var aplicaBicicletasDiv = document.createElement('div');
+			var aplicaBicicletas = new AplicaBicicletas(aplicaBicicletasDiv, map);
+			var aplicaMeteorologicaDiv = document.createElement('div');
+			var aplicaMeteorologica = new AplicaMeteorologica(aplicaMeteorologicaDiv, map);
+
+			var cambiaNormalDiv = document.createElement('div');
+			var cambiaNormal = new CambiaNormal(cambiaNormalDiv, map);
+			var cambiaSateliteDiv = document.createElement('div');
+			var cambiaSatelite = new CambiaSatelite(cambiaSateliteDiv, map);
+			var cambiaHibridoDiv = document.createElement('div');
+			var cambiaHibrido = new CambiaHibrido(cambiaHibridoDiv, map);
+			var cambiaTerrenoDiv = document.createElement('div');
+			var cambiaTerreno = new CambiaTerreno(cambiaTerrenoDiv, map);
+
+			aplicaTraficoDiv.index = 1;
+			map.controls[google.maps.ControlPosition.TOP_RIGHT].push(aplicaTraficoDiv);
+			aplicaTransporteDiv.index = 2;
+			map.controls[google.maps.ControlPosition.TOP_RIGHT].push(aplicaTransporteDiv);
+			aplicaBicicletasDiv.index = 3;
+			map.controls[google.maps.ControlPosition.TOP_RIGHT].push(aplicaBicicletasDiv);
+			aplicaMeteorologicaDiv.index = 4;
+			map.controls[google.maps.ControlPosition.TOP_RIGHT].push(aplicaMeteorologicaDiv);
+
+			cambiaNormalDiv.index = 1;
+			map.controls[google.maps.ControlPosition.TOP_LEFT].push(cambiaNormalDiv);
+			cambiaSateliteDiv.index = 2;
+			map.controls[google.maps.ControlPosition.TOP_LEFT].push(cambiaSateliteDiv);
+			cambiaHibridoDiv.index = 3;
+			map.controls[google.maps.ControlPosition.TOP_LEFT].push(cambiaHibridoDiv);
+			cambiaTerrenoDiv.index = 4;
+			map.controls[google.maps.ControlPosition.TOP_LEFT].push(cambiaTerrenoDiv);
+		}
+
+		google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
+
+<body>
+    <header>
+		<img id="img_cabecera" src="../static/cabecera.jpg" alt="cabecera"/>
+		<h1> PlaceHolder </h1>
+		<h3> Periodico digital </h3>
+<%include file="menu.html"/>
+
+	<section id="map-canvas">
+	</section>
+
+<%include file="pie.html"/>
