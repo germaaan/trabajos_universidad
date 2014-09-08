@@ -167,10 +167,10 @@ El último punto que se pedía desarrollar, era que cuando el ratón pase por en
 
 Para que no obtengamos el molesto comportamiento de que se nos estén constantemente abriendo ventanas emergentes, creamos una variable cuyo valor es un valor numérico que representa si para una determinada noticia, ha sido ya abierta una ventana emergente, para si este es el caso, no vuelva a abrir dicha ventana emergente hasta que actualicemos la página. La función a la que indicamos que vamos a llamar, primero comprobará que no se haya abierta ninguna ventana emergente de esa noticia, y si es así indica la página que debe cargarse en dicha ventana emergente en función de la sección de la noticia, haciendo después una llamada a **“windows.open”** a la que le pasamos la ruta de la página a cargar en la ventana y diversos parámetros más, que también son configurables. Un ejemplo de la llamada sería:
 
-´´´
+```
 window.open(ruta,'','"channelmode=no,directories=no,fullscreen=no,height=482,width=539,location=no,menubar=no,resizable=no,scrollbars=no,status=no,left=600,top=80"');
-´´´
+```
 
-Como decíamos esto hará que una ventana emergente se abra, cargando la página que le hayamos indicado en función de a que sección pertenezca la noticia. Esa página siempre tendrá el titular de las noticias relacionadas y los enlaces a las mismas, pero no nos interesa que al pulsar el enlace en la ventana emergente, se cargue la página en la ventana emergente, lo que nos interesa es que se cargue en la ventana que teníamos ya abierta; para poder hacer esto, haremos que cuando se pulse los enlaces de las ventanas emergente se llame a un función que primero cargue la página del enlace en la ventana principal haciendo uso del objeto **“windows.opener”**, que referencia a la ventana que abrió la ventana actual (`window.opener.location.href = enlace`) y después que cierre la ventana actual (window.close()).
+Como decíamos esto hará que una ventana emergente se abra, cargando la página que le hayamos indicado en función de a que sección pertenezca la noticia. Esa página siempre tendrá el titular de las noticias relacionadas y los enlaces a las mismas, pero no nos interesa que al pulsar el enlace en la ventana emergente, se cargue la página en la ventana emergente, lo que nos interesa es que se cargue en la ventana que teníamos ya abierta; para poder hacer esto, haremos que cuando se pulse los enlaces de las ventanas emergente se llame a un función que primero cargue la página del enlace en la ventana principal haciendo uso del objeto **“windows.opener”**, que referencia a la ventana que abrió la ventana actual (`window.opener.location.href = enlace`) y después que cierre la ventana actual (`window.close()`).
 
 ![pra02_img13](imagenes/pra02_img13.png)
