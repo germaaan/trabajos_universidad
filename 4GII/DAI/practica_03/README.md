@@ -1,10 +1,10 @@
 Diseño de Aplicaciones para Internet
 ====================================
-3º Grado en Ingeniería Informática 2012/2013
+3º Grado en Ingeniería Informática 2013/2014
 --------------------------------------------
 
 
-# Formularios “Avanzados”, Templates, Manejo de Sesiones y Persistencia
+# Práctica 3: Formularios “Avanzados”, Templates, Manejo de Sesiones y Persistencia
 ### Germán Martínez Maldonado
 
 ### Resumen

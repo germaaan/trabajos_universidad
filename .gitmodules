@@ -1,0 +1,3 @@
+[submodule "4GII/DAI/practica_05/codigo"]
+	path = 4GII/DAI/practica_05/codigo
+	url = git@github.com:IV-GII/Django_Traduccion

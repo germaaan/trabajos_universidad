@@ -1,12 +1,10 @@
 Diseño de Aplicaciones para Internet
 ====================================
-3º Grado en Ingeniería Informática 2012/2013
+3º Grado en Ingeniería Informática 2013/2014
 --------------------------------------------
 
 
-# Utilización de Servicios On-line: RSS
-# Utilización de Servicios On-line: Google Charts y Google Maps
-# Utilización de Servicios On-line: Twitter
+# Práctica 4: Utilización de Servicios On-line RSS, Google Charts, Google Maps y Twitter
 ### Germán Martínez Maldonado
 
 ### Resumen
