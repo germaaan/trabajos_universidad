@@ -4,57 +4,72 @@ Transmisión de Datos y Redes de Computadores
 --------------------------------------------
 
 
-# PRÁCTICA 2: Conexión a Internet de redes LAN y corporativas
+# PRÁCTICA 4: Gestión de redes corporativas vía Web
 ### Germán Martínez Maldonado
 ### Pablo Sánchez Robles
 
-**1. Elabora  un  mapa  de  la  red  en  la  que  destaquen  las  sedes/edificios  y  su  forma  de interconexión.**
+**1. Instale la herramienta The Dude en una maquina Windows. Active la opción de interfaz web, y abra la interfaz web de The Dude desde el navegador web de otro equipo. Para ello, utilice la dirección de la red de Datos del equipo que ejecuta la herramienta (33.x.y.z).**
 
-![pra03_img01](imagenes/pra03_img01.png)
+Una vez instalado **“The Dude”** activamos la interfaz web mediante la opción correspondiente, que se encuentra en **Configuraciones -> Servidor -> Acceso Web**. Especificamos la dirección de la red de Datos del equipo que tiene el software instalado y el puerto por el que se ofrece el servicio. Podemos dejar el puerto que viene por defecto (80), pero como es el puerto que suelen usar los servidores, vamos a usar el puerto 8080 para evitar inconvenientes. Tras esto podremos conectarnos desde cualquier equipo de la red mediante un navegador al programa de gestión y realizar la mayoría de las tareas que pueden hacerse con The Dude. En el ejercicio 5 se muestra una captura del interfaz web.
 
-
-**2. Elabore un mapa de servicios, indicando su localización y los usuarios de dichos servicios con su localización.**
-
-![pra03_img02](imagenes/pra03_img02.png)
+![pra04_img01](imagenes/pra04_img01.png)
 
 
-**3. Elabore un mapa de los elementos de la red (router, switches, enlaces…).**
+**2. Descubra mediante la herramienta The Dude que  dispositivos IP hay en  su  red. Con WinBox configure como pasarela por defecto del router Mikrotik la dirección 192.168.33.21. ¿Qué elementos aparecen? ¿Por qué no aparecen el resto de los dispositivos IP del laboratorio?**
 
-![pra03_img03](imagenes/pra03_img03.png)
+Con WinBox añadimos una ruta por defecto para el router que pase por la dirección **192.168.33.21**, desde el menú **IP -> Routes**, y hacemos clic en el botón de añadir nueva ruta.
 
+![pra04_img02](imagenes/pra04_img02.png)
 
-**4. Caracterice el tráfico generado por los servicios/servidores. Para ello, realice una simulación de un día, y compruebe las estadísticas de “setPk:vector(packetBytes)” y “*sent*” correspondientes a las interfaces de los servidores (“*.mac”) y a las aplicaciones (“*.tcpApp[0]”).**
+Para iniciar el descubrimiento de los dispositivos, pulsamos el botón **“Descubrir”** que aparece en la parte superior de la interfaz principal, indicamos que escanee en cada red conectada a mi máquina con profundidad 0, es decir, que sólo mire las redes conectadas directamente a mi máquina y no las conectadas a estas.
 
-Los datos obtenidos con la simulación nos muestran que el grueso de bit/sec enviados proceden del servidor de ficheros local, de los switches y por último del servidor web, después estarían los usuarios de tecnologías y artes y por último se quedan sin carga de envío los router que van desde Cálculo hacia el servidor de **AliveNet**, esto puede ser debido a que no dejamos terminar de hacer la simulación del día entero, solo llegamos a T = 42300.1236944, y quizás después puede que se manden paquetes hacia fuera de nuestra red pero hasta ese momento el tráfico es solo interno entre los usuarios, el servidor de ficheros y el servidor web.
+![pra04_img03](imagenes/pra04_img03.png)
 
-En paquetes enviados vemos como se mantiene lo dicho en el párrafo anterior y tiene sentido ya que si el mayor número de bit/sec se ha dado en una zona de la red es lógico pensar que el mayor número de paquetes enviados se ha dado en el mismo segmento de la red, y es así, los mayores emisores de paquetes son los servidores, en primer lugar está el servidor de ficheros local situado en tecnologías, en segundo lugar el servidor web situado en artes y luego ya vienen los usuarios primero los usuarios que más envían son los de tecnologías y después los de arte.
+Este proceso puede durar mucho pero en principio transcurridos unos 20 minutos muestra los nodos que se ven en la siguiente imagen, como hemos indicado que solo descubra los nodos directamente conectados a nuestro nodo origen, vemos que solo aparecen la interfaz de datos de los nodos de la subisla del router R1_1, todos los demás elementos que aparecen son debido a la configuración del laboratorio que conecta todos los equipos a través de la interfaz de gestión. No aparecen el resto de interfaces de datos del resto de nodos del laboratorio, porque al no estar directamente conectados, deberíamos indicar un número de saltos mayor para que The Dude los descubra.
 
-
-**5. Analice  las  estadísticas  escalares  “*.collisions”,  “.BitError”,  “rx  utilization  (%)”  de  las interfaces de red “*.mac” para comprobar si hay algún problema en las redes y enlaces. ¿Qué problemas identifica?**
-
-* **droppedPkBitError**: Analizando las estadísticas de la red se puede observar que la mayoría de los paquetes perdidos se dan en el edificio de tecnología, tanto en la primera planta como en la segunda, y también algunos en los switches de tecnología y arte, aunque en proporción son los menos. Esto se debe a que la interconexión de los host finales en el edificio de tecnologías se hace mediante un hub que uno otros dos hubs, uno por planta, y cada uno de estos últimos interconecta 90 host, lo cual implica que el hub que une estos dos hubs está interconectando 180 dispositivos, lo cual es mucho más de lo que un hub puede soportar.
-
-* **Collision**: Las colisiones se dan en los switches, y como podemos ver en las estadísticas más de la mitad de ellas se dan en la interfaz 2 de cada switch lo cual significa que las colisiones se producen en mayor cantidad en el lado de tecnologías puesto que las interfaces 2 de cada switch son las que van hacia este edificio, lo cual tiene sentido porque es en ese edificio donde se pierden la mayoría de los paquetes por culpa del hub sobre-saturado de trabajo.
-
-* **Rx utilización(%)**: Como se puede observar en las estadísticas de utilización del canal es también en tecnologías donde se produce el mayor porcentaje, lo cual tiene sentido ya que es ahí donde se encuentran la mayoría de los usuarios de la red, y como también es ahí donde se producen la mayoría de los paquetes perdidos y de las colisiones tiene toda la lógica que sea ahí donde hay más saturación, lo cual implica el reenvío de más paquetes para suplir los paquetes perdidos, por lo tanto el cuello de botella de nuestra **AliveNet** se produce en el edificio de tecnologías.
+![pra04_img04](imagenes/pra04_img04.png)
 
 
-**6. Indique qué cambiaría en la red para mejorar su rendimiento.**
+**3. Cree un gráfico en The Dude con el valor de la tasa de transferencia medida en la interfaz ether3 del router al que está directamente conectado. (Para ello, no olvide activar SNMP en dicho router).**
 
-Teniendo en cuenta que la mayoría de la cantidad de tráfico proviene del servidor de ficheros local que se encuentra en el edificio Tecnológico, y que también en esa zona es donde se producen más colisiones, si observamos cómo están hechas las interconexiones de los dispositivos en esa zona, podremos apreciar que las conexiones se realizan a través de concentradores, debido a la gran cantidad de usuarios y tráfico, por la forma de funcionar los concentradores no es recomendado usarlo en un escenario como este, porque generará una
-gran cantidad de tráfico redundante lo que explica el gran número de colisiones que se producen. Visto esto, deberíamos cambiar los concentradores por conmutadores, para que así el tráfico de la red sea menos saturado, ya que los datos solo se enviaran a los equipos de destino, teniendo en cuenta que hay 90 usuarios por planta, el cambio será considerable.
+Lo primero que hacemos es activar SNMP en el router desde el menú **IP -> SNMP de WinBox**:
 
-En el edificio de Artes, aunque la cantidad de tráfico sea mucho menor, también es recomendable cambiar los concentradores por conmutadores para que haya mayor fluidez en la red.
+![pra04_img05](imagenes/pra04_img05.png)
 
-En resumen, el edificio de Artes, el concentrador **arte_planta1_hub** pasaría a ser el conmutador **arte_planta1_sw** y, en el edificio Tecnológico, el concentrador **tecno_dist_hub** pasaría a ser el conmutador **tecno_dist_sw**, **tecno_planta1_hub** a **tecno_planta1_sw** y **tecno_planta2_hub** a **tecno_planta2_sw**.
+Para iniciar el proceso pulsamos en el interfaz principal con el **botón derecho -> Utilidades -> Indagar Snmp**. En la nueva ventana buscamos los OIDs **“ifInOctets”** e **“ifOutOctets”** (para conocer tanto los flujos de entrada como de salida) y seleccionamos los que terminen en un 3, que son los correspondientes a la interfaz ether3. 
+
+![pra04_img06](imagenes/pra04_img06.png)
+
+Ahora creamos una fuente de datos con cada uno, pulsando sobre el OID correspondiente el botón derecho y haciendo clic sobre **“Crear fuente de datos”**, las vamos a crear con nombres que nos resulten fáciles de ver, como puede ser **“In Octets”** y **“Out Octets”**.
+	
+![pra04_img07](imagenes/pra04_img07.png)
+
+Para crear el gráfico, desde el menú de izquierda en Chart, creamos el gráfico pasándole las dos fuentes de datos anteriores y esperamos a que el gráfico se realice. 
+
+![pra04_img08](imagenes/pra04_img08.png)
+
+Para realizar un gráfico que pueda ser relevante para analizar datos sería necesario dejar al software durante unas horas, pero como no tenemos ese tiempo para esperar, mostramos el gráfico generado tras casi 20 minutos.
+
+![pra04_img09](imagenes/pra04_img09.png)
 
 
-**7. Indique qué cambiaría en la red para mejorar el diseño para permitir mejor escalabilidad y facilidad de mantenimiento.**
+**4. Cree desde The Dude una sonda para comprobar si la ruta por defecto del router Mikrotik deja de estar presente. Para  comprobar su funcionamiento, asígnesela como  servicio  al router y, tras varios minutos de prueba, desactive en el router la entrada por defecto mediante WinBox.**
 
-El cambio en el diseño de la red sería básicamente adoptar un modelo jerárquico que nos permitirá tener una mejor escalabilidad al ser más fácil ampliar la red con nuevas sedes, y mayor facilidad de mantenimiento porque si hay que reparar un dispositivo, esto no interfiere en las otras capas.
+Para crear una nueva sonda nos vamos al dispositivo que queremos hacer la prueba, volvemos a acceder a **“Indagar Snmp”** y buscamos el OID correspondiente a la ruta por defecto. Ahora desde el menú de la izquierda pulsamos en **“Probes”** y pulsamos el botón para añadir una nueva prueba. En el interfaz que aparece, ponemos que el método de comparación sea **“== (igual)”** y el valor sea 1, lo que nos indica que la ruta está activa, dándonos una alarma si se desactiva.
 
-Para aplicar este tipo de diseño en nuestra red corporativa, lo primero sería dividir nuestra red actual en 3 capas: **núcleo, capa de distribución y capa de acceso**. El núcleo estaría formado por los 3 routers que tenemos en nuestro esquema de red: **routerAlivenet**, **router** e **Internet**, estando servidorAlivenet conectado a routerAlivenet para que sigan pudiendo acceder fácilmente a él los usuarios de las distintas sedes. Para la capa de distribución, sustituiríamos los conmutadores **sw1** y **sw2** por 2 routers  (**router1** y **router2**) para seguir asegurándonos un acceso redundante y poder gestionar cada sede como una subred diferente (para cumplir el objetivo de mejor escalabilidad y facilidad de mantenimiento). Para configurar la capa de acceso, en lo que refiere al edificio de Artes, primero pondríamos un router (**router_artes**) al que por un lado se conectaría servidorWeb y el conmutador **arte_planta1_sw** (al que están conectados todos los usuarios de Artes) ,y por el otro se conectaría a los routers **router1** y **router2**; y referente al edificio Tecnológico, cambiaríamos el conmutador **tecno_dist_sw** por un router (**router_tec**), al que conectaríamos por un lado **servidorFicherosLocal** y los conmutadores **tecno_planta1_sw** y **tecno_planta2_sw**, y por el otro lado los routers **router1** y **router2**. Para finalizar conectamos los routers **router1** y **router2** ambos con **routerAlivenet** y router, además **servidorAlivenet** se conectará a **routerAlivenet** y a **router**, para completar la redundancia e evitar los posibles problemas de conectividad.
+![pra04_img10](imagenes/pra04_img10.png)
 
-Con esto ya tendríamos nuestra red organizada según modelo jerárquico, el esquema quedaría como se muestra en la siguiente imagen:
+Como veremos, cuando desactivamos en el router la entrada por defecto y la sonda lo detecta, la sonda envía una trap diciendo que algo falla:
 
-![pra03_img04](imagenes/pra03_img04.png)
+![pra04_img11](imagenes/pra04_img11.png)
+
+
+**5. Cree desde la interfaz web una sonda para comprobar si el servicio IPP (puerto 631 de TCP) del equipo del compañero está activo.**
+
+Para crear una nueva sonda desde el interfaz web seleccionamos de las opciones de la izquierda el apartado **“Pruebas”**. 
+
+![pra04_img12](imagenes/pra04_img12.png)
+
+Haciendo clic en ese apartado nos aparecerá la interfaz de **“Añadir nueva prueba”**, una vez con los datos introducimos ya sólo quedaría darle a añadir para crear una nueva sonda.
+
+![pra04_img13](imagenes/pra04_img13.png)

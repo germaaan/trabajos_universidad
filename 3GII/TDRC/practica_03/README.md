@@ -4,7 +4,7 @@ Transmisión de Datos y Redes de Computadores
 --------------------------------------------
 
 
-# PRÁCTICA 2: Conexión a Internet de redes LAN y corporativas
+# PRÁCTICA 3: Conexión a Internet de redes LAN y corporativas
 ### Germán Martínez Maldonado
 ### Pablo Sánchez Robles
 
