@@ -8,10 +8,10 @@ Diseño de Aplicaciones para Internet
 ### Germán Martínez Maldonado
 
 ### Resumen
-En esta práctica avanzaremos en el uso de web.py: aprenderemos a usar las opciones de validación de formularios, usaremos plantillas (tem- plates) para generar cómodamente nuestro código, utilizaremos sesiones para gestionar la identificación de usuarios en la web y otros posibles datos de sesión de nuestra aplicación web y, por último, veremos como gestionar la persistencia usando diversas bases de datos.
+En esta práctica avanzaremos en el uso de web.py: aprenderemos a usar las opciones de validación de formularios, usaremos plantillas (templates) para generar cómodamente nuestro código, utilizaremos sesiones para gestionar la identificación de usuarios en la web y otros posibles datos de sesión de nuestra aplicación web y, por último, veremos como gestionar la persistencia usando diversas bases de datos.
 
 ### 1. Formularios  “Avanzados”
-En la práctica anterior empezamos a manejar la sub-biblioteca Form de web.py para manejar formularios. Dicha biblioteca contiene opciones interesantes que pueden facilitarnos el introducir información en una página web, así como su posterior manejo. En este punto de la práctica vamos realizar un formulario algo más complejo que los vistos hasta ahora:
+En la práctica anterior empezamos a manejar la subbiblioteca Form de web.py para manejar formularios. Dicha biblioteca contiene opciones interesantes que pueden facilitarnos el introducir información en una página web, así como su posterior manejo. En este punto de la práctica vamos realizar un formulario algo más complejo que los vistos hasta ahora:
 
 * El formulario debe preguntar los siguientes datos personales a los usuarios de la web: nombre, apellidos, DNI, correo electrónico, fecha de nacimiento, dirección, contraseña, verificación de la contraseña, forma de pago preferida (contra reembolso o tarjeta VISA), número de la tarjeta VISA, aceptación de las clausulas de protección de datos, botón de mandar.
 
@@ -39,7 +39,7 @@ Cuando desarrollamos una aplicación web (por ejemplo con web.py) no es buena id
 
 Una biblioteca potente de templates para Python es Mako utilizada en sitios masivos en producción como [http://reddit.com](http://reddit.com). En esta práctica vamos a familiarizarnos con esta biblioteca. Para ello tendremos que construir varias páginas usando esta biblioteca.
 
-Dichas páginas deberán mostrar un sitio web en el que haya (al menos) una cabecera, dos columnas y un pie de página. En la cabecera habrá una imagen de logo del sitio, el nombre del mismo, un subtítulo y un mini-formulario de login. En la columna izquierda habrá opciones (como por ejemplo menús), la columna de la derecha contendrá el cuerpo principal de la página y el pie contendrá información sobre el autor de la página y los derechos de la misma (licencia). En caso de no querer hacer el diseño de la página desde cero, podemos optar por descargar alguna plantilla web ya creada y adaptarla para poder presentar los contenidos dinámicos de la aplicación.
+Dichas páginas deberán mostrar un sitio web en el que haya (al menos) una cabecera, dos columnas y un pie de página. En la cabecera habrá una imagen de logo del sitio, el nombre del mismo, un subtítulo y un miniformulario de login. En la columna izquierda habrá opciones (como por ejemplo menús), la columna de la derecha contendrá el cuerpo principal de la página y el pie contendrá información sobre el autor de la página y los derechos de la misma (licencia). En caso de no querer hacer el diseño de la página desde cero, podemos optar por descargar alguna plantilla web ya creada y adaptarla para poder presentar los contenidos dinámicos de la aplicación.
 
 Debemos intentar seguir el paradigma modelo, vista, controlador lo más fielmente posible, de tal manera que sea posible, por ejemplo, cambiar radicalmente el aspecto de la aplicación web modificando únicamente los templates.
 
@@ -48,9 +48,9 @@ Debemos intentar seguir el paradigma modelo, vista, controlador lo más fielment
 
 En toda aplicación web es necesario gestionar información que se mantenga entre las distintas páginas que visita el usuario. Para ello se hace uso de las sesiones. En web.py las sesiones se manejan mediante la clase Session.
 
-En esta práctica adaptaremos nuestra página web para que el formulario de login anteriormente citado funcione correctamente y se muestre distinto con- tenido si el usuario está ya identificado o no (a esta alturas la comprobación del usuario estará codificada “a pelo” en la aplicación, en el siguiente apartado guardaremos distintos usuarios usando persistencia). Por ejemplo, el formulario de login de la cabecera solo debe aparecerle a los usuario no identificados, mien- tras que a los identificados debe mostrárseles el típico mensaje de “Bienvenido xxxx” y un enlace para hacer logout.
+En esta práctica adaptaremos nuestra página web para que el formulario de login anteriormente citado funcione correctamente y se muestre distinto contenido si el usuario está ya identificado o no (a esta alturas la comprobación del usuario estará codificada “a pelo” en la aplicación, en el siguiente apartado guardaremos distintos usuarios usando persistencia). Por ejemplo, el formulario de login de la cabecera solo debe aparecerle a los usuario no identificados, mientras que a los identificados debe mostrárseles el típico mensaje de “Bienvenido xxxx” y un enlace para hacer logout.
 
-Además, implementaremos en nuestra aplicación (y utilizando exclusiva- mente sesiones) un “menu” que muestre -y permita acceder- a las últimas 3 páginas del sitio visitadas (lo podemos incluir en el menú de la izquierda).
+Además, implementaremos en nuestra aplicación (y utilizando exclusivamente sesiones) un “menu” que muestre y permita acceder a las últimas 3 páginas del sitio visitadas (lo podemos incluir en el menú de la izquierda).
 
 
 ### 4. Persistencia
