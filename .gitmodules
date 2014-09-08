@@ -1,3 +1,18 @@
 [submodule "4GII/DAI/practica_05/codigo"]
 	path = 4GII/DAI/practica_05/codigo
 	url = git@github.com:IV-GII/Django_Traduccion
+[submodule "4GII/IV/ejercicios"]
+	path = 4GII/IV/ejercicios
+	url = git@github.com:germaaan/IV_GMM
+[submodule "4GII/IV/practica_01"]
+	path = 4GII/IV/practica_01
+	url = git@github.com:germaaan/PRACTICA_01
+[submodule "4GII/IV/practica_02"]
+	path = 4GII/IV/practica_02
+	url = git@github.com:germaaan/PRACTICA_02
+[submodule "4GII/IV/practica_03"]
+	path = 4GII/IV/practica_03
+	url = git@github.com:germaaan/PRACTICA_03
+[submodule "4GII/IV/practica_04"]
+	path = 4GII/IV/practica_04
+	url = git@github.com:germaaan/Django_Traduccion
