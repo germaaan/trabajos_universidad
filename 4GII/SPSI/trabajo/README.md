@@ -387,6 +387,7 @@ Podríamos considerar la parte final del programa la opción **“Acerca de”**
 * SiCoEn.SiCoEn (SiCoEn.java)
 * JInternalFrame
  * SiCoEn.Texto (Texto.java)
+_ _ _
 
 ### Clase SiCoEn.Encriptador
 
@@ -438,8 +439,6 @@ Podríamos considerar la parte final del programa la opción **“Acerca de”**
 * IvParameterSpec iv8
 * IvParameterSpec iv16
 
-_ _ _
-
 #### Descripción detallada
 
 Encriptador usado para las operaciones de cifrado y descifrado
@@ -452,7 +451,6 @@ José Manuel Castillo Pérez
 0.9
 
 *Definición en la línea 29 del archivo Encriptador.java.*
-_ _ _
 
 #### Documentación del constructor y destructor
 
@@ -545,7 +543,6 @@ texto: Texto del que se quieren conocer el número de bloques.
 * **Devuelve:**
 Número de bloques del texto.
 * *Definición en la línea 424 del archivo Encriptador.java.*
-_ _ _
 
 #### Documentación de los datos miembro
 
@@ -669,7 +666,6 @@ _ _ _
 
 * static final int ABRIR_TEXTO_PLANO = 1
 * static final int GUARDAR = 4
-_ _ _
 
 #### Descripción detallada
 
@@ -683,7 +679,6 @@ José Manuel Castillo Pérez
 0.9
 
 *Definición en la línea 13 del archivo Filtro.java.*
-_ _ _
 
 #### Documentación del constructor y destructor
 
@@ -729,7 +724,6 @@ f: Archivo seleccionado.
 * **Devuelve:**
 Extensión del archivo seleccionado.
 * *Definición en la línea 45 del archivo Filtro.java.*
-_ _ _
 
 #### Documentación de los datos miembro
 
@@ -757,7 +751,6 @@ _ _ _
 * static final int FORMATO_ASCII = 10
 * static final int FORMATO_BIN = 11
 * static final int FORMATO_HEX = 12
-_ _ _
 
 #### Descripción detallada
 
@@ -805,7 +798,6 @@ texto: Texto en formato binario que se va a convertir.
 * **Devuelve:**
 Texto convertido en formato ASCII.
 * *Definición en la línea 111 del archivo Formato.java.*
-_ _ _
 
 #### Documentación de los datos miembro
 
@@ -858,7 +850,6 @@ _ _ _
 #### Atributos privados
 
 Encriptador encriptador
-_ _ _
 
 #### Descripción detallada
 
@@ -872,14 +863,12 @@ José Manuel Castillo Pérez
 0.9
 
 Definición en la línea 29 del archivo Interfaz.java.
-_ _ _
 
 ### Documentación del constructor y destructor
 
 * **SiCoEn.Interfaz.Interfaz()**
 Constructor de la ventana principal de la interfaz de la aplicación.
 * *Definición en la línea 37 del archivo Interfaz.java.*
-_ _ _
 
 #### Documentación de las funciones miembro
 
@@ -1020,7 +1009,6 @@ Método que muestra información sobre los desarrolladores del proyecto.
 * **Parámetros:**
 evt: Evento disparador de la acción (seleccionar opción "Ayuda -> Acerca de")
 * *Definición en la línea 1274 del archivo Interfaz.java.*
-_ _ _
 
 #### Documentación de los datos miembro
 
@@ -1035,7 +1023,6 @@ _ _ _
 #### Métodos públicos estáticos
 
 static void main (String args[])
-_ _ _
 
 #### Descripción detallada
 
@@ -1049,7 +1036,6 @@ José Manuel Castillo Pérez
 0.9
 
 **Definición en la línea 10 del archivo SiCoEn.java.**
-_ _ _
 
 #### Documentación de las funciones miembro
 
@@ -1072,7 +1058,6 @@ _ _ _
 * int getFormato()
 * String getTexto()
 * void setTexto (String texto)
-_ _ _
 
 #### Descripción detallada
 
@@ -1086,7 +1071,6 @@ José Manuel Castillo Pérez
 0.9
 
 **Definición en la línea 12 del archivo Texto.java.**
-_ _ _
 
 #### Documentación del constructor y destructor
 
@@ -1095,7 +1079,6 @@ Constructor de la ventana de texto.
 * **Parámetros:**
 texto: Texto que será mostrado en la ventana una vez sea creada.
 * *Definición en la línea 22 del archivo Texto.java.*
-_ _ _
 
 #### Documentación de las funciones miembro
 
