@@ -539,7 +539,7 @@ José Manuel Castillo Pérez
  * *Definición en la línea 58 del archivo Encriptador.java.*
 
 * **final int SiCoEn.Encriptador.MODO_OFB = 33[static]**: Código interno que representa el modo OFB.
- * Definición en la línea 62 del archivo Encriptador.java.*
+ * *Definición en la línea 62 del archivo Encriptador.java.*
 
 * **final int SiCoEn.Encriptador.PADDING_PKCS = 40[static]**: Código interno que representa el padding PKC5.
  * *Definición en la línea 66 del archivo Encriptador.java.*
@@ -591,6 +591,7 @@ José Manuel Castillo Pérez
 
 * **IvParameterSpec SiCoEn.Encriptador.iv16[private]**: Vector de inicialización de 16 bytes. Usado para cifrar con AES.
  * *Definición en la línea 95 del archivo Encriptador.java.*
+
 _ _ _
 
 
@@ -635,12 +636,12 @@ José Manuel Castillo Pérez
 
 #### Documentación de las funciones miembro
 
-**int SiCoEn.Filtro.getTipoFiltro()**: Devuelve el tipo de filtro seleccionado.
+* **int SiCoEn.Filtro.getTipoFiltro()**: Devuelve el tipo de filtro seleccionado.
  * **Devuelve:** Tipo de filtro seleccionado.
  * *Definición en la línea 62 del archivo Filtro.java.*
 
 * **String SiCoEn.Filtro.getExtension()**: Devuelve la extensión del tipo de filtro seleccionado.
- * **Devuelve:**Extensión del tipo de filtro seleccionado.
+ * **Devuelve:** Extensión del tipo de filtro seleccionado.
  * *Definición en la línea 71 del archivo Filtro.java.*
 
 * **boolean SiCoEn.Filtro.accept (File f)**: Aceptar un archivo como seleccionable.
@@ -664,6 +665,7 @@ José Manuel Castillo Pérez
 
 * **final int SiCoEn.Filtro.GUARDAR = 4[static]**: Código interno que representa filtro de guardado.
  * *Definición en la línea 22 del archivo Filtro.java.*
+
 _ _ _
 
 
@@ -727,6 +729,7 @@ José Manuel Castillo Pérez
 
 * **final int SiCoEn.Formato.FORMATO_HEX = 12[static]**: Código interno que representa la selección de formato hexadecimal.
  * *Definición en la línea 26 del archivo Formato.java.*
+
 _ _ _
 
 
@@ -882,6 +885,7 @@ José Manuel Castillo Pérez
 
 * **Encriptador SiCoEn.Interfaz.encriptador[private]**: Encriptador que se usará para cifrar o descifrar el texto de las ventanas.
  * *Definición en la línea 31 del archivo Interfaz.java.*
+
 _ _ _
 
 
@@ -909,6 +913,7 @@ José Manuel Castillo Pérez
 * **static void SiCoEn.SiCoEn.main (String args[])[static]**: Método principal de la aplicación.
  * **Parámetros.** args: El argumento de línea de comandos.
  * *Definición en la línea 17 del archivo SiCoEn.java.*
+
 _ _ _
 
 
@@ -968,6 +973,7 @@ José Manuel Castillo Pérez
 * **void SiCoEn.Texto.setTexto (String texto)**: Método que permite asignar texto a la ventana para que sea mostrado en ella.
  * **Parámetros.** texto: Texto a introducir en la ventana.
  * *Definición en la línea 91 del archivo Texto.java.*
+
 _ _ _
 
 
