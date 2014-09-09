@@ -454,9 +454,8 @@ José Manuel Castillo Pérez
 
 #### Documentación del constructor y destructor
 
-* **SiCoEn.Encriptador.Encriptador()**
-Constructor del encriptador.
-* *Definición en la línea 100 del archivo Encriptador.java.*
+* **SiCoEn.Encriptador.Encriptador()**: Constructor del encriptador.
+ * *Definición en la línea 100 del archivo Encriptador.java.*
 
 #### Documentación de las funciones miembro
 
@@ -473,170 +472,125 @@ Constructor del encriptador.
  * *Definición en la línea 153 del archivo Encriptador.java.*
 
 * **void SiCoEn.Encriptador.setAlgoritmo (int algoritmo)**: Método para cambiar el algoritmo actual del encriptador mediante su código interno.
- * **Parámetros:** algoritmo: Algoritmo al que cambiar (AES/Blowfish/DES/TripleDES).
+ * **Parámetros.** algoritmo: Algoritmo al que cambiar (AES/Blowfish/DES/TripleDES).
  * *Definición en la línea 163 del archivo Encriptador.java.*
 
 * **void SiCoEn.Encriptador.setModo (int modo)**: Método para cambiar el modo actual del encriptador mediante su código interno.
- * **Parámetros:** modo: Modo al que cambiar (CBC/CFB/ECB/OFB).
+ * **Parámetros.** modo: Modo al que cambiar (CBC/CFB/ECB/OFB).
  * *Definición en la línea 173 del archivo Encriptador.java.*
 
-* **void SiCoEn.Encriptador.setPadding (int padding)**
-Método para cambiar el padding actual del encriptador mediante su código interno.
-* **Parámetros:**
-padding: Padding al que cambiar (PKCS5/ISO 10126).
-* *Definición en la línea 183 del archivo Encriptador.java.*
+* **void SiCoEn.Encriptador.setPadding (int padding)**: Método para cambiar el padding actual del encriptador mediante su código interno.
+ * **Parámetros.** padding: Padding al que cambiar (PKCS5/ISO 10126).
+ * *Definición en la línea 183 del archivo Encriptador.java.*
 
-* **String SiCoEn.Encriptador.cadenaAlgoritmo()**
-Método que devuelve una cadena de texto con el algoritmo seleccionado para el encriptador.
-* **Devuelve:**
-Cadena de texto con el algoritmo actual.
-* *Definición en la línea 193 del archivo Encriptador.java.*
+* **String SiCoEn.Encriptador.cadenaAlgoritmo()**: Método que devuelve una cadena de texto con el algoritmo seleccionado para el encriptador.
+ * **Devuelve:** Cadena de texto con el algoritmo actual.
+ * *Definición en la línea 193 del archivo Encriptador.java.*
 
-* **String SiCoEn.Encriptador.cadenaModo()**
-Método que devuelve una cadena de texto con el modo seleccionado para el encriptador.
-* **Devuelve:**
-Cadena de texto con el modo actual.
-* *Definición en la línea 220 del archivo Encriptador.java.*
+* **String SiCoEn.Encriptador.cadenaModo()**: Método que devuelve una cadena de texto con el modo seleccionado para el encriptador.
+ * **Devuelve:** Cadena de texto con el modo actual.
+ * *Definición en la línea 220 del archivo Encriptador.java.*
 
-* **String SiCoEn.Encriptador.cadenaPadding()**
-Método que devuelve una cadena de texto con el padding seleccionado para el encriptador.
-* **Devuelve:**
-Cadena de texto con el padding actual.
-* *Definición en la línea 247 del archivo Encriptador.java.*
+* **String SiCoEn.Encriptador.cadenaPadding()**: Método que devuelve una cadena de texto con el padding seleccionado para el encriptador.
+ * **Devuelve:** Cadena de texto con el padding actual.
+ * *Definición en la línea 247 del archivo Encriptador.java.*
 
-* **Cipher SiCoEn.Encriptador.generarCifrador (int func)**
-Método que genera el cifrador con el que se realizarán las operaciones de cifrado y descifrado de texto.
-* **Parámetros:**
-func: Código que indica si se va a generar un encriptador para cifrar texto o para descifrarlo.
-* **Devuelve:**
-Encriptador que cifrará o descifrará texto.
-* *Definición en la línea 270 del archivo Encriptador.java.*
+* **Cipher SiCoEn.Encriptador.generarCifrador (int func)**: Método que genera el cifrador con el que se realizarán las operaciones de cifrado y descifrado de texto.
+ * **Parámetros.** func: Código que indica si se va a generar un encriptador para cifrar texto o para descifrarlo.
+ * **Devuelve:** Encriptador que cifrará o descifrará texto.
+ * *Definición en la línea 270 del archivo Encriptador.java.*
 
-* **String SiCoEn.Encriptador.cifrar (File origen)**
-Método que cifrará el texto según los valores actuales del encriptador generado.
-* **Parámetros:**
-origen: Archivo con el texto de la ventana actual que se usará durante el cifrado.
-* **Devuelve:**
-Texto cifrado según los valores del encriptador.
-* *Definición en la línea 340 del archivo Encriptador.java.*
+* **String SiCoEn.Encriptador.cifrar (File origen)**: Método que cifrará el texto según los valores actuales del encriptador generado.
+ * **Parámetros.** origen: Archivo con el texto de la ventana actual que se usará durante el cifrado.
+ * **Devuelve:** Texto cifrado según los valores del encriptador.
+ * *Definición en la línea 340 del archivo Encriptador.java.*
 
-* **String SiCoEn.Encriptador.descifrar (File origen)**
-Método que descifrará el texto según los valores actuales del encriptador generado.
-* **Parámetros:**
-origen: Archivo con el texto de la ventana actual cifrado que se usará durante el descifrado.
-* **Devuelve:**
-Texto descifrado según los valores del encriptador.
-* *Definición en la línea 383 del archivo Encriptador.java.*
+* **String SiCoEn.Encriptador.descifrar (File origen)**: Método que descifrará el texto según los valores actuales del encriptador generado.
+ * **Parámetros.** origen: Archivo con el texto de la ventana actual cifrado que se usará durante el descifrado.
+ * **Devuelve:** Texto descifrado según los valores del encriptador.
+ * *Definición en la línea 383 del archivo Encriptador.java.*
 
-* **int SiCoEn.Encriptador.numeroBloques (String texto)**
-Método que devuelve el número de bloques que tiene un texto.
-* **Parámetros:**
-texto: Texto del que se quieren conocer el número de bloques.
-* **Devuelve:**
-Número de bloques del texto.
-* *Definición en la línea 424 del archivo Encriptador.java.*
+* **int SiCoEn.Encriptador.numeroBloques (String texto)**: Método que devuelve el número de bloques que tiene un texto.
+ * **Parámetros.** texto: Texto del que se quieren conocer el número de bloques.
+ * **Devuelve:** Número de bloques del texto.
+ * *Definición en la línea 424 del archivo Encriptador.java.*
 
 #### Documentación de los datos miembro
 
-* **final int SiCoEn.Encriptador.ALGORITMO_AES = 20[static]**
-Código interno que representa el algoritmo AES.
-* *Definición en la línea 34 del archivo Encriptador.java.*
+* **final int SiCoEn.Encriptador.ALGORITMO_AES = 20[static]**: Código interno que representa el algoritmo AES.
+ * *Definición en la línea 34 del archivo Encriptador.java.*
 
-* **final int SiCoEn.Encriptador.ALGORITMO_BLOW = 21[static]**
-Código interno que representa el algoritmo Blowfish.
-* *Definición en la línea 38 del archivo Encriptador.java.*
+* **final int SiCoEn.Encriptador.ALGORITMO_BLOW = 21[static]**: Código interno que representa el algoritmo Blowfish.
+ * *Definición en la línea 38 del archivo Encriptador.java.*
 
-* **final int SiCoEn.Encriptador.ALGORITMO_DES = 22[static]**
-Código interno que representa el algoritmo DES.
-* *Definición en la línea 42 del archivo Encriptador.java.*
+* **final int SiCoEn.Encriptador.ALGORITMO_DES = 22[static]**: Código interno que representa el algoritmo DES.
+ * *Definición en la línea 42 del archivo Encriptador.java.*
 
-* **final int SiCoEn.Encriptador.ALGORITMO_TDES = 23[static]**
-Código interno que representa el algoritmo TripleDES.
-* *Definición en la línea 46 del archivo Encriptador.java.*
+* **final int SiCoEn.Encriptador.ALGORITMO_TDES = 23[static]**: Código interno que representa el algoritmo TripleDES.
+ * *Definición en la línea 46 del archivo Encriptador.java.*
 
-* **final int SiCoEn.Encriptador.MODO_CBC = 30[static]**
-Código interno que representa el modo CBC.
-* *Definición en la línea 50 del archivo Encriptador.java.*
+* **final int SiCoEn.Encriptador.MODO_CBC = 30[static]**: Código interno que representa el modo CBC.
+ * *Definición en la línea 50 del archivo Encriptador.java.*
 
-* **final int SiCoEn.Encriptador.MODO_CFB = 31[static]**
-Código interno que representa el modo CFB.
-* *Definición en la línea 54 del archivo Encriptador.java.*
+* **final int SiCoEn.Encriptador.MODO_CFB = 31[static]**: Código interno que representa el modo CFB.
+ * *Definición en la línea 54 del archivo Encriptador.java.*
 
-* **final int SiCoEn.Encriptador.MODO_ECB = 32[static]**
-Código interno que representa el modo ECB.
-* *Definición en la línea 58 del archivo Encriptador.java.*
+* **final int SiCoEn.Encriptador.MODO_ECB = 32[static]**: Código interno que representa el modo ECB.
+ * *Definición en la línea 58 del archivo Encriptador.java.*
 
-* **final int SiCoEn.Encriptador.MODO_OFB = 33[static]**
-Código interno que representa el modo OFB.
-Definición en la línea 62 del archivo Encriptador.java.
+* **final int SiCoEn.Encriptador.MODO_OFB = 33[static]**: Código interno que representa el modo OFB.
+ * Definición en la línea 62 del archivo Encriptador.java.*
 
-* **final int SiCoEn.Encriptador.PADDING_PKCS = 40[static]**
-Código interno que representa el padding PKC5.
-* *Definición en la línea 66 del archivo Encriptador.java.*
+* **final int SiCoEn.Encriptador.PADDING_PKCS = 40[static]**: Código interno que representa el padding PKC5.
+ * *Definición en la línea 66 del archivo Encriptador.java.*
 
-* **final int SiCoEn.Encriptador.PADDING_ISO = 41[static]**
-Código interno que representa el padding ISO 10126.
-* *Definición en la línea 70 del archivo Encriptador.java.*
+* **final int SiCoEn.Encriptador.PADDING_ISO = 41[static]**: Código interno que representa el padding ISO 10126.
+ * *Definición en la línea 70 del archivo Encriptador.java.*
 
-* **final int SiCoEn.Encriptador.CIFRADOR = 100[static]**
-Código interno que representa el modo cifrador.
-* *Definición en la línea 74 del archivo Encriptador.java.*
+* **final int SiCoEn.Encriptador.CIFRADOR = 100[static]**: Código interno que representa el modo cifrador.
+ * *Definición en la línea 74 del archivo Encriptador.java.*
 
-* **final int SiCoEn.Encriptador.DESCIFRADOR = 101[static].**
-Código interno que representa el modo descifrador.
-* *Definición en la línea 78 del archivo Encriptador.java.*
+* **final int SiCoEn.Encriptador.DESCIFRADOR = 101[static].**: Código interno que representa el modo descifrador.
+ * *Definición en la línea 78 del archivo Encriptador.java.*
 
-* **int SiCoEn.Encriptador.algoritmo[private]**
-Valor que indica el algoritmo actual seleccionado en el programa.
-* *Definición en la línea 80 del archivo Encriptador.java.*
+* **int SiCoEn.Encriptador.algoritmo[private]**: Valor que indica el algoritmo actual seleccionado en el programa.
+ * *Definición en la línea 80 del archivo Encriptador.java.*
 
-* **int SiCoEn.Encriptador.modo[private]**
-Valor que indica el modo actual del cifrador (cifrar o descifrar).
-* *Definición en la línea 81 del archivo Encriptador.java.*
+* **int SiCoEn.Encriptador.modo[private]**: Valor que indica el modo actual del cifrador (cifrar o descifrar).
+ * *Definición en la línea 81 del archivo Encriptador.java.*
 
-* **int SiCoEn.Encriptador.padding[private]**
-Valor que indica el padding actual seleccionado en el programa.
-* *Definición en la línea 82 del archivo Encriptador.java.*
+* **int SiCoEn.Encriptador.padding[private]**: Valor que indica el padding actual seleccionado en el programa.
+ * *Definición en la línea 82 del archivo Encriptador.java.*
 
-* **KeyGenerator SiCoEn.Encriptador.generadorClave_aes[private]**
-Generador de llaves para el cifrado con AES.
-* *Definición en la línea 84 del archivo Encriptador.java.*
+* **KeyGenerator SiCoEn.Encriptador.generadorClave_aes[private]**: Generador de llaves para el cifrado con AES.
+ * *Definición en la línea 84 del archivo Encriptador.java.*
 
-* **KeyGenerator SiCoEn.Encriptador.generadorClave_blow[private]**
-Generador de llaves para el cifrado con Blowfish.
-* *Definición en la línea 85 del archivo Encriptador.java.*
+* **KeyGenerator SiCoEn.Encriptador.generadorClave_blow[private]**: Generador de llaves para el cifrado con Blowfish.
+ * *Definición en la línea 85 del archivo Encriptador.java.*
 
-* **KeyGenerator SiCoEn.Encriptador.generadorClave_des[private]**
-Generador de llaves para el cifrado con DES.
-* *Definición en la línea 86 del archivo Encriptador.java.*
+* **KeyGenerator SiCoEn.Encriptador.generadorClave_des[private]**: Generador de llaves para el cifrado con DES.
+ * *Definición en la línea 86 del archivo Encriptador.java.*
 
-* **KeyGenerator SiCoEn.Encriptador.generadorClave_tdes[private]**
-Generador de llaves para el cifrado con TripleDES.
-* *Definición en la línea 87 del archivo Encriptador.java.*
+* **KeyGenerator SiCoEn.Encriptador.generadorClave_tdes[private]**: Generador de llaves para el cifrado con TripleDES.
+ * *Definición en la línea 87 del archivo Encriptador.java.*
 
-* **SecretKey SiCoEn.Encriptador.clave_aes[private]**
-Clave secreta generada para cifrar usando AES.
-* *Definición en la línea 89 del archivo Encriptador.java.*
+* **SecretKey SiCoEn.Encriptador.clave_aes[private]**: Clave secreta generada para cifrar usando AES.
+ * *Definición en la línea 89 del archivo Encriptador.java.*
 
-* **SecretKey SiCoEn.Encriptador.clave_blow[private]**
-Clave secreta generada para cifrar usando Blowfish.
-* *Definición en la línea 90 del archivo Encriptador.java.*
+* **SecretKey SiCoEn.Encriptador.clave_blow[private]**: Clave secreta generada para cifrar usando Blowfish.
+ * *Definición en la línea 90 del archivo Encriptador.java.*
 
-* **SecretKey SiCoEn.Encriptador.clave_des[private]**
-Clave secreta generada para cifrar usando DES.
-* *Definición en la línea 91 del archivo Encriptador.java.*
+* **SecretKey SiCoEn.Encriptador.clave_des[private]**: Clave secreta generada para cifrar usando DES.
+ * *Definición en la línea 91 del archivo Encriptador.java.*
 
-* **SecretKey SiCoEn.Encriptador.clave_tdes[private]**
-Clave secreta generada para cifrar usando TripleDES.
-* *Definición en la línea 92 del archivo Encriptador.java.*
+* **SecretKey SiCoEn.Encriptador.clave_tdes[private]**: Clave secreta generada para cifrar usando TripleDES.
+ * *Definición en la línea 92 del archivo Encriptador.java.*
 
-* **IvParameterSpec SiCoEn.Encriptador.iv8[private]**
-Vector de inicialización de 8 bytes.
-* *Definición en la línea 94 del archivo Encriptador.java.*
+* **IvParameterSpec SiCoEn.Encriptador.iv8[private]**: Vector de inicialización de 8 bytes.
+ * *Definición en la línea 94 del archivo Encriptador.java.*
 
-* **IvParameterSpec SiCoEn.Encriptador.iv16[private]**
-Vector de inicialización de 16 bytes. Usado para cifrar con AES.
-* *Definición en la línea 95 del archivo Encriptador.java.*
+* **IvParameterSpec SiCoEn.Encriptador.iv16[private]**: Vector de inicialización de 16 bytes. Usado para cifrar con AES.
+ * *Definición en la línea 95 del archivo Encriptador.java.*
 _ _ _
 
 
@@ -674,58 +628,42 @@ José Manuel Castillo Pérez
 
 #### Documentación del constructor y destructor
 
-* **SiCoEn.Filtro.Filtro (int tipoFiltro, String extension)**
-Constructor del filtro.
-* **Parámetros:**
-tipoFiltro: Tipo de filtro a crear de los predefinidos.
-extension: Extensión concreta del filtro.
-* *Definición en la línea 32 del archivo Filtro.java.*
+* **SiCoEn.Filtro.Filtro (int tipoFiltro, String extension)**: Constructor del filtro.
+ * **Parámetros.** tipoFiltro: Tipo de filtro a crear de los predefinidos.
+ * **Parámetros.** extension: Extensión concreta del filtro.
+ * *Definición en la línea 32 del archivo Filtro.java.*
 
 #### Documentación de las funciones miembro
 
-int SiCoEn.Filtro.getTipoFiltro()
-Devuelve el tipo de filtro seleccionado.
-* **Devuelve:**
-Tipo de filtro seleccionado.
-* *Definición en la línea 62 del archivo Filtro.java.*
+**int SiCoEn.Filtro.getTipoFiltro()**: Devuelve el tipo de filtro seleccionado.
+ * **Devuelve:** Tipo de filtro seleccionado.
+ * *Definición en la línea 62 del archivo Filtro.java.*
 
-* **String SiCoEn.Filtro.getExtension()**
-Devuelve la extensión del tipo de filtro seleccionado.
-* **Devuelve:**
-Extensión del tipo de filtro seleccionado.
-* *Definición en la línea 71 del archivo Filtro.java.*
+* **String SiCoEn.Filtro.getExtension()**: Devuelve la extensión del tipo de filtro seleccionado.
+ * **Devuelve:**Extensión del tipo de filtro seleccionado.
+ * *Definición en la línea 71 del archivo Filtro.java.*
 
-* **boolean SiCoEn.Filtro.accept (File f)**
-Aceptar un archivo como seleccionable.
-* **Parámetros:**
-f: Archivo seleccionable.
-* **Devuelve:**
-Verdadero si el archivo seleccionable se acepta, falso en caso contrario.
-* *Definición en la línea 83 del archivo Filtro.java.*
+* **boolean SiCoEn.Filtro.accept (File f)**: Aceptar un archivo como seleccionable.
+ * **Parámetros.** f: Archivo seleccionable.
+ * **Devuelve:** Verdadero si el archivo seleccionable se acepta, falso en caso contrario.
+ * *Definición en la línea 83 del archivo Filtro.java.*
 
-* **String SiCoEn.Filtro.getDescription()**
-Devuelve la descripción del filtro.
-* **Devuelve:**
-Descripción del filtro.
-* *Definición en la línea 110 del archivo Filtro.java.*
+* **String SiCoEn.Filtro.getDescription()**: Devuelve la descripción del filtro.
+ * **Devuelve:** Descripción del filtro.
+ * *Definición en la línea 110 del archivo Filtro.java.*
 
-* **static String SiCoEn.Filtro.getFileExtension (File f)[static]**
-Obtiene la extensión del archivo seleccionado.
-* **Parámetros:**
-f: Archivo seleccionado.
-* **Devuelve:**
-Extensión del archivo seleccionado.
-* *Definición en la línea 45 del archivo Filtro.java.*
+* **static String SiCoEn.Filtro.getFileExtension (File f)[static]**: Obtiene la extensión del archivo seleccionado.
+ * **Parámetros.** f: Archivo seleccionado.
+ * **Devuelve:** Extensión del archivo seleccionado.
+ * *Definición en la línea 45 del archivo Filtro.java.*
 
 #### Documentación de los datos miembro
 
-* **final int SiCoEn.Filtro.ABRIR_TEXTO_PLANO = 1[static]**
-Código interno que representa filtro de archivo de texto plano.
-* *Definición en la línea 18 del archivo Filtro.java.*
+* **final int SiCoEn.Filtro.ABRIR_TEXTO_PLANO = 1[static]**: Código interno que representa filtro de archivo de texto plano.
+ * *Definición en la línea 18 del archivo Filtro.java.*
 
-* **final int SiCoEn.Filtro.GUARDAR = 4[static]**
-Código interno que representa filtro de guardado.
-* *Definición en la línea 22 del archivo Filtro.java.*
+* **final int SiCoEn.Filtro.GUARDAR = 4[static]**: Código interno que representa filtro de guardado.
+ * *Definición en la línea 22 del archivo Filtro.java.*
 _ _ _
 
 
@@ -759,51 +697,36 @@ José Manuel Castillo Pérez
 
 #### Documentación de las funciones miembro
 
-* **static String SiCoEn.Formato.ascii_to_hex (String texto)[static]**
-Método que convierte un texto recibido en formato ASCII a formato hexadecimal.
-* **Parámetros:**
-texto: Texto en formato ASCII que se va a convertir.
-* **Devuelve:**
-Texto convertido en formato hexadecimal.
-* *Definición en la línea 35 del archivo Formato.java.*
+* **static String SiCoEn.Formato.ascii_to_hex (String texto)[static]**: Método que convierte un texto recibido en formato ASCII a formato hexadecimal.
+ * **Parámetros.** texto: Texto en formato ASCII que se va a convertir.
+ * **Devuelve:** Texto convertido en formato hexadecimal.
+ * *Definición en la línea 35 del archivo Formato.java.*
 
-* **static String SiCoEn.Formato.ascii_to_bin (String texto)[static]**
-Método que convierte un texto recibido en formato ASCII a formato binario.
-* **Parámetros:**
-texto: Texto en formato ASCII que se va a convertir.
-* **Devuelve:**
-Texto convertido en formato binario.
-* *Definición en la línea 56 del archivo Formato.java.*
+* **static String SiCoEn.Formato.ascii_to_bin (String texto)[static]**: Método que convierte un texto recibido en formato ASCII a formato binario.
+ * **Parámetros.** texto: Texto en formato ASCII que se va a convertir.
+ * **Devuelve:** Texto convertido en formato binario.
+ * *Definición en la línea 56 del archivo Formato.java.*
 
-* **static String SiCoEn.Formato.hex_to_ascii (String texto)[static]**
-Método que convierte un texto recibido en formato hexadecimal a formato ASCII.
-* **Parámetros:**
-texto: Texto en formato hexadecimal que se va a convertir.
-* **Devuelve:**
-Texto convertido en formato ASCII.
-* *Definición en la línea 88 del archivo Formato.java.*
+* **static String SiCoEn.Formato.hex_to_ascii (String texto)[static]**: Método que convierte un texto recibido en formato hexadecimal a formato ASCII.
+ * **Parámetros.** texto: Texto en formato hexadecimal que se va a convertir.
+ * **Devuelve:** Texto convertido en formato ASCII.
+ * *Definición en la línea 88 del archivo Formato.java.*
 
-* **static String SiCoEn.Formato.bin_to_ascii (String texto)[static]**
-Método que convierte un texto recibido en formato binario a formato ASCII.
-* **Parámetros:**
-texto: Texto en formato binario que se va a convertir.
-* **Devuelve:**
-Texto convertido en formato ASCII.
-* *Definición en la línea 111 del archivo Formato.java.*
+* **static String SiCoEn.Formato.bin_to_ascii (String texto)[static]**: Método que convierte un texto recibido en formato binario a formato ASCII.
+ * **Parámetros.** texto: Texto en formato binario que se va a convertir.
+ * **Devuelve:** Texto convertido en formato ASCII.
+ * *Definición en la línea 111 del archivo Formato.java.*
 
 #### Documentación de los datos miembro
 
-* **final int SiCoEn.Formato.FORMATO_ASCII = 10[static]**
-Código interno que representa la selección de formato ASCII.
-* *Definición en la línea 18 del archivo Formato.java.*
+* **final int SiCoEn.Formato.FORMATO_ASCII = 10[static]**: Código interno que representa la selección de formato ASCII.
+ * *Definición en la línea 18 del archivo Formato.java.*
 
-* **final int SiCoEn.Formato.FORMATO_BIN = 11[static]**
-Código interno que representa la selección de formato binario.
-* *Definición en la línea 22 del archivo Formato.java.*
+* **final int SiCoEn.Formato.FORMATO_BIN = 11[static]**: Código interno que representa la selección de formato binario.
+ * *Definición en la línea 22 del archivo Formato.java.*
 
-* **final int SiCoEn.Formato.FORMATO_HEX = 12[static]**
-Código interno que representa la selección de formato hexadecimal.
-* *Definición en la línea 26 del archivo Formato.java.*
+* **final int SiCoEn.Formato.FORMATO_HEX = 12[static]**: Código interno que representa la selección de formato hexadecimal.
+ * *Definición en la línea 26 del archivo Formato.java.*
 _ _ _
 
 
@@ -854,159 +777,111 @@ José Manuel Castillo Pérez
 **Versión:**
 0.9
 
-Definición en la línea 29 del archivo Interfaz.java.
+*Definición en la línea 29 del archivo Interfaz.java.*
 
 ### Documentación del constructor y destructor
 
-* **SiCoEn.Interfaz.Interfaz()**
-Constructor de la ventana principal de la interfaz de la aplicación.
-* *Definición en la línea 37 del archivo Interfaz.java.*
+* **SiCoEn.Interfaz.Interfaz()**: Constructor de la ventana principal de la interfaz de la aplicación.
+ * *Definición en la línea 37 del archivo Interfaz.java.*
 
 #### Documentación de las funciones miembro
 
-* **void SiCoEn.Interfaz.opcionCifrar (java.awt.event.ActionEvent evt)[private]**
-Método que gestiona la opción de cifrar texto. Cifrará el texto de la ventana actual según las opciones seleccionadas.
-* **Parámetros:**
-evt: Evento disparador de la acción (seleccionar opción "Encriptación -> Cifrar")
-* *Definición en la línea 357 del archivo Interfaz.java.*
+* **void SiCoEn.Interfaz.opcionCifrar (java.awt.event.ActionEvent evt)[private]**: Método que gestiona la opción de cifrar texto. Cifrará el texto de la ventana actual según las opciones seleccionadas.
+ * **Parámetros.** evt: Evento disparador de la acción (seleccionar opción "Encriptación -> Cifrar")
+ * *Definición en la línea 357 del archivo Interfaz.java.*
 
-* **void SiCoEn.Interfaz.opcionDescifrar (java.awt.event.ActionEvent evt)[private]**
-Método que gestiona la opción de descifrar texto. Descifrará el texto de la ventana actual según las opciones seleccionadas.
-* **Parámetros:**
-evt: Evento disparador de la acción (seleccionar opción "Encriptación -> Descifrar")
-* *Definición en la línea 396 del archivo Interfaz.java.*
+* **void SiCoEn.Interfaz.opcionDescifrar (java.awt.event.ActionEvent evt)[private]**: Método que gestiona la opción de descifrar texto. Descifrará el texto de la ventana actual según las opciones seleccionadas.
+ * **Parámetros.** evt: Evento disparador de la acción (seleccionar opción "Encriptación -> Descifrar")
+ * *Definición en la línea 396 del archivo Interfaz.java.*
 
-* **void SiCoEn.Interfaz.accionAbrir (java.awt.event.ActionEvent evt)[private]**
-Método que gestiona la opción de abrir de archivos de texto. Muestra una ventana con un explorador de archivos para seleccionar un archivo de texto a abrir en una nueva ventana.
-* **Parámetros:**
-evt: Evento disparador de la acción (seleccionar opción "Archivo -> Abrir")
-* *Definición en la línea 429 del archivo Interfaz.java.*
+* **void SiCoEn.Interfaz.accionAbrir (java.awt.event.ActionEvent evt)[private]**: Método que gestiona la opción de abrir de archivos de texto. Muestra una ventana con un explorador de archivos para seleccionar un archivo de texto a abrir en una nueva ventana.
+ * **Parámetros.** evt: Evento disparador de la acción (seleccionar opción "Archivo -> Abrir")
+ * *Definición en la línea 429 del archivo Interfaz.java.*
 
-* **void SiCoEn.Interfaz.accionGuardar (java.awt.event.ActionEvent evt)[private]**
-Método que gestiona la opción de guardar texto en un archivo. Muestra una ventana con un explorar de archivos para seleccionar donde guardar un archivo con el texto de la ventana actual.
-* **Parámetros:**
-evt: Evento disparador de la acción (seleccionar opción "Archivo -> Guardar")
-* *Definición en la línea 479 del archivo Interfaz.java.*
+* **void SiCoEn.Interfaz.accionGuardar (java.awt.event.ActionEvent evt)[private]**: Método que gestiona la opción de guardar texto en un archivo. Muestra una ventana con un explorar de archivos para seleccionar donde guardar un archivo con el texto de la ventana actual.
+ * **Parámetros.** evt: Evento disparador de la acción (seleccionar opción "Archivo -> Guardar")
+ * *Definición en la línea 479 del archivo Interfaz.java.*
 
-* **void SiCoEn.Interfaz.accionNuevo (java.awt.event.ActionEvent evt)[private]**
-Método que gestiona la opción de crear una nueva ventana de texto. Crea una nueva ventana de texto en blanco.
-* **Parámetros:**
-evt: Evento disparador de la acción (seleccionar opción "Archivo -> Nuevo")
-* *Definición en la línea 562 del archivo Interfaz.java.*
+* **void SiCoEn.Interfaz.accionNuevo (java.awt.event.ActionEvent evt)[private]**: Método que gestiona la opción de crear una nueva ventana de texto. Crea una nueva ventana de texto en blanco.
+ * **Parámetros.** evt: Evento disparador de la acción (seleccionar opción "Archivo -> Nuevo")
+ * *Definición en la línea 562 del archivo Interfaz.java.*
 
-* **void SiCoEn.Interfaz.accionSalir (java.awt.event.ActionEvent evt)[private]**
-Método que gestiona la opción de salir del programa. Cierra el programa.
-* **Parámetros:**
-evt: Evento disparador de la acción (seleccionar opción "Archivo -> Salir")
-* *Definición en la línea 575 del archivo Interfaz.java.*
+* **void SiCoEn.Interfaz.accionSalir (java.awt.event.ActionEvent evt)[private]**: Método que gestiona la opción de salir del programa. Cierra el programa.
+ * **Parámetros.** evt: Evento disparador de la acción (seleccionar opción "Archivo -> Salir")
+ * *Definición en la línea 575 del archivo Interfaz.java.*
 
-* **void SiCoEn.Interfaz.marca_algoritmo_aes (java.awt.event.ItemEvent evt)[private]**
-Método que gestiona la selección del algoritmo AES.
-* **Parámetros:**
-evt: Evento disparador de la acción (marcar "Algoritmo -> AES")
-* *Definición en la línea 584 del archivo Interfaz.java.*
+* **void SiCoEn.Interfaz.marca_algoritmo_aes (java.awt.event.ItemEvent evt)[private]**: Método que gestiona la selección del algoritmo AES.
+ * **Parámetros.** evt: Evento disparador de la acción (marcar "Algoritmo -> AES")
+ * *Definición en la línea 584 del archivo Interfaz.java.*
 
-* **void SiCoEn.Interfaz.marca_algoritmo_blow (java.awt.event.ItemEvent evt)[private]**
-Método que gestiona la selección del algoritmo Blowfish.
-* **Parámetros:**
-evt: Evento disparador de la acción (marcar "Algoritmo -> Blowfish")
-* *Definición en la línea 596 del archivo Interfaz.java.*
+* **void SiCoEn.Interfaz.marca_algoritmo_blow (java.awt.event.ItemEvent evt)[private]**: Método que gestiona la selección del algoritmo Blowfish.
+ * **Parámetros.** evt: Evento disparador de la acción (marcar "Algoritmo -> Blowfish")
+ * *Definición en la línea 596 del archivo Interfaz.java.*
 
-* **void SiCoEn.Interfaz.marca_algoritmo_des (java.awt.event.ItemEvent evt)[private]**
-Método que gestiona la selección del algoritmo DES.
-* **Parámetros:**
-evt: Evento disparador de la acción (marcar "Algoritmo -> DES")
-* *Definición en la línea 607 del archivo Interfaz.java.*
+* **void SiCoEn.Interfaz.marca_algoritmo_des (java.awt.event.ItemEvent evt)[private]**: Método que gestiona la selección del algoritmo DES.
+ * **Parámetros.** evt: Evento disparador de la acción (marcar "Algoritmo -> DES")
+ * *Definición en la línea 607 del archivo Interfaz.java.*
 
-* **void SiCoEn.Interfaz.marca_algoritmo_tdes (java.awt.event.ItemEvent evt)[private]**
-Método que gestiona la selección del algoritmo TripleDES.
-* **Parámetros:**
-evt: Evento disparador de la acción (marcar "Algoritmo -> TripleDES")
-* *Definición en la línea 619 del archivo Interfaz.java.*
+* **void SiCoEn.Interfaz.marca_algoritmo_tdes (java.awt.event.ItemEvent evt)[private]**: Método que gestiona la selección del algoritmo TripleDES.
+ * **Parámetros.** evt: Evento disparador de la acción (marcar "Algoritmo -> TripleDES")
+ * *Definición en la línea 619 del archivo Interfaz.java.*
 
-* **void SiCoEn.Interfaz.marca_modo_cbc (java.awt.event.ItemEvent evt)[private]**
-Método que gestiona la selección del modo de cifrado CBC.
-* **Parámetros:**
-evt: Evento disparador de la acción (marcar "Modo -> CBC")
-* *Definición en la línea 630 del archivo Interfaz.java.*
+* **void SiCoEn.Interfaz.marca_modo_cbc (java.awt.event.ItemEvent evt)[private]**: Método que gestiona la selección del modo de cifrado CBC.
+ * **Parámetros.** evt: Evento disparador de la acción (marcar "Modo -> CBC")
+ * *Definición en la línea 630 del archivo Interfaz.java.*
 
-* **void SiCoEn.Interfaz.marca_modo_cfb (java.awt.event.ItemEvent evt)[private]**
-Método que gestiona la selección del modo de cifrado CFB.
-* **Parámetros:**
-evt: Evento disparador de la acción (marcar "Modo -> CFB")
-* *Definición en la línea 641 del archivo Interfaz.java.*
+* **void SiCoEn.Interfaz.marca_modo_cfb (java.awt.event.ItemEvent evt)[private]**: Método que gestiona la selección del modo de cifrado CFB.
+ * **Parámetros.** evt: Evento disparador de la acción (marcar "Modo -> CFB")
+ * *Definición en la línea 641 del archivo Interfaz.java.*
 
-* **void SiCoEn.Interfaz.marca_modo_ecb (java.awt.event.ItemEvent evt)[private]**
-Método que gestiona la selección del modo de cifrado ECB.
-* **Parámetros:**
-evt: Evento disparador de la acción (marcar "Modo -> ECB")
-* *Definición en la línea 652 del archivo Interfaz.java.*
+* **void SiCoEn.Interfaz.marca_modo_ecb (java.awt.event.ItemEvent evt)[private]**: Método que gestiona la selección del modo de cifrado ECB.
+ * **Parámetros.** evt: Evento disparador de la acción (marcar "Modo -> ECB")
+ * *Definición en la línea 652 del archivo Interfaz.java.*
 
-* **void SiCoEn.Interfaz.marca_modo_ofb (java.awt.event.ItemEvent evt)[private]**
-Método que gestiona la selección del modo de cifrado OFB.
-* **Parámetros:**
-evt: Evento disparador de la acción (marcar "Modo -> OFB")
-* *Definición en la línea 663 del archivo Interfaz.java.*
+* **void SiCoEn.Interfaz.marca_modo_ofb (java.awt.event.ItemEvent evt)[private]**: Método que gestiona la selección del modo de cifrado OFB.
+ * **Parámetros.** evt: Evento disparador de la acción (marcar "Modo -> OFB")
+ * *Definición en la línea 663 del archivo Interfaz.java.*
 
-* **void SiCoEn.Interfaz.marca_padding_pkcs (java.awt.event.ItemEvent evt)[private]**
-Método que gestiona la selección del padding PKCS5.
-* **Parámetros:**
-evt: Evento disparador de la acción (marcar "Padding -> PKCS5")
-* *Definición en la línea 674 del archivo Interfaz.java.*
+* **void SiCoEn.Interfaz.marca_padding_pkcs (java.awt.event.ItemEvent evt)[private]**: Método que gestiona la selección del padding PKCS5.
+ * **Parámetros.** evt: Evento disparador de la acción (marcar "Padding -> PKCS5")
+ * *Definición en la línea 674 del archivo Interfaz.java.*
 
-* **void SiCoEn.Interfaz.marca_padding_iso (java.awt.event.ItemEvent evt)[private]**
-Método que gestiona la selección del padding ISO 10126.
-* **Parámetros:**
-evt: Evento disparador de la acción (marcar "Padding -> ISO 10126")
-* *Definición en la línea 685 del archivo Interfaz.java.*
+* **void SiCoEn.Interfaz.marca_padding_iso (java.awt.event.ItemEvent evt)[private]**: Método que gestiona la selección del padding ISO 10126.
+ * **Parámetros.** evt: Evento disparador de la acción (marcar "Padding -> ISO 10126")
+ * *Definición en la línea 685 del archivo Interfaz.java.*
 
-* **void SiCoEn.Interfaz.opcion_error_cifrado (java.awt.event.ActionEvent evt)[private]**
-Método que gestiona la selección de la opción de error en el texto plano. Crea una ventana en la que se muestra el error introducido y otra que muestra el resultado de dicho error en la descodificación.
-* **Parámetros:** 
-evt: Evento disparador de la acción (seleccionar opción "Errores -> Error en el texto plano")
-* *Definición en la línea 699 del archivo Interfaz.java.*
+* **void SiCoEn.Interfaz.opcion_error_cifrado (java.awt.event.ActionEvent evt)[private]**: Método que gestiona la selección de la opción de error en el texto plano. Crea una ventana en la que se muestra el error introducido y otra que muestra el resultado de dicho error en la descodificación.
+ * **Parámetros.** evt: Evento disparador de la acción (seleccionar opción "Errores -> Error en el texto plano")
+ * *Definición en la línea 699 del archivo Interfaz.java.*
 
-* **void SiCoEn.Interfaz.opcion_error_sincronizacion (java.awt.event.ActionEvent evt)[private]**
-Método que gestiona la selección de la opción de error en la sincronización. Crea una ventana en la que se muestra el error introducido y otra que muestra el resultado de dicho error en la descodificación.
-* **Parámetros:**
-evt: Evento disparador de la acción (seleccionar opción "Errores -> Error en la sincronización")
-* *Definición en la línea 996 del archivo Interfaz.java.*
+* **void SiCoEn.Interfaz.opcion_error_sincronizacion (java.awt.event.ActionEvent evt)[private]**: Método que gestiona la selección de la opción de error en la sincronización. Crea una ventana en la que se muestra el error introducido y otra que muestra el resultado de dicho error en la descodificación.
+ * **Parámetros.** evt: Evento disparador de la acción (seleccionar opción "Errores -> Error en la sincronización")
+ * *Definición en la línea 996 del archivo Interfaz.java.*
 
-* **void SiCoEn.Interfaz.accion_error_com_1 (java.awt.event.ActionEvent evt)[private]**
-Método que gestiona la selección de la opción de error en la comunicación. Crea una ventana en la que se muestra el error introducido y otra que muestra el resultado de dicho error en la descodificación.
-* **Parámetros:**
-evt: Evento disparador de la acción (seleccionar opción "Errores -> Error en la comunicación -> Error de 1 bit")
-* *Definición en la línea 829 del archivo Interfaz.java.*
+* **void SiCoEn.Interfaz.accion_error_com_1 (java.awt.event.ActionEvent evt)[private]**: Método que gestiona la selección de la opción de error en la comunicación. Crea una ventana en la que se muestra el error introducido y otra que muestra el resultado de dicho error en la descodificación.
+ * **Parámetros.** evt: Evento disparador de la acción (seleccionar opción "Errores -> Error en la comunicación -> Error de 1 bit")
+ * *Definición en la línea 829 del archivo Interfaz.java.*
 
-* **void SiCoEn.Interfaz.accion_formato_ascii (java.awt.event.ActionEvent evt)[private]**
-Método que gestiona la selección del formato ASCII. Cambia el texto de la ventana actual formato ASCII.
-* **Parámetros:**
-evt: Evento disparador de la acción (marcar "Formato -> ASCII")
-* *Definición en la línea 1164 del archivo Interfaz.java.*
+* **void SiCoEn.Interfaz.accion_formato_ascii (java.awt.event.ActionEvent evt)[private]**: Método que gestiona la selección del formato ASCII. Cambia el texto de la ventana actual formato ASCII.
+ * **Parámetros.** evt: Evento disparador de la acción (marcar "Formato -> ASCII")
+ * *Definición en la línea 1164 del archivo Interfaz.java.*
 
-* **void SiCoEn.Interfaz.accion_formato_bin (java.awt.event.ActionEvent evt)[private]**
-Método que gestiona la selección del formato binario. Cambia el texto de la ventana actual formato binario.
-* **Parámetros:**
-evt: Evento disparador de la acción (marcar "Formato -> Binario")
-* *Definición en la línea 1201 del archivo Interfaz.java.*
+* **void SiCoEn.Interfaz.accion_formato_bin (java.awt.event.ActionEvent evt)[private]**: Método que gestiona la selección del formato binario. Cambia el texto de la ventana actual formato binario.
+ * **Parámetros.** evt: Evento disparador de la acción (marcar "Formato -> Binario")
+ * *Definición en la línea 1201 del archivo Interfaz.java.*
 
-* **void SiCoEn.Interfaz.accion_formato_hex (java.awt.event.ActionEvent evt)[private]**
-Método que gestiona la selección del formato hexadecimal. Cambia el texto de la ventana actual formato hexadecimal.
-* **Parámetros:**
-evt: Evento disparador de la acción (marcar "Formato ->Hexadecimal")
-* *Definición en la línea 1238 del archivo Interfaz.java.*
+* **void SiCoEn.Interfaz.accion_formato_hex (java.awt.event.ActionEvent evt)[private]**: Método que gestiona la selección del formato hexadecimal. Cambia el texto de la ventana actual formato hexadecimal.
+ * **Parámetros.** evt: Evento disparador de la acción (marcar "Formato ->Hexadecimal")
+ * *Definición en la línea 1238 del archivo Interfaz.java.*
 
-* **void SiCoEn.Interfaz.accionAcerca (java.awt.event.ActionEvent evt)[private]**
-Método que muestra información sobre los desarrolladores del proyecto.
-* **Parámetros:**
-evt: Evento disparador de la acción (seleccionar opción "Ayuda -> Acerca de")
-* *Definición en la línea 1274 del archivo Interfaz.java.*
+* **void SiCoEn.Interfaz.accionAcerca (java.awt.event.ActionEvent evt)[private]**: Método que muestra información sobre los desarrolladores del proyecto.
+ * **Parámetros.** evt: Evento disparador de la acción (seleccionar opción "Ayuda -> Acerca de")
+ * *Definición en la línea 1274 del archivo Interfaz.java.*
 
 #### Documentación de los datos miembro
 
-* **Encriptador SiCoEn.Interfaz.encriptador[private]**
-Encriptador que se usará para cifrar o descifrar el texto de las ventanas.
-* *Definición en la línea 31 del archivo Interfaz.java.*
+* **Encriptador SiCoEn.Interfaz.encriptador[private]**: Encriptador que se usará para cifrar o descifrar el texto de las ventanas.
+ * *Definición en la línea 31 del archivo Interfaz.java.*
 _ _ _
 
 
@@ -1027,15 +902,13 @@ José Manuel Castillo Pérez
 **Versión:**
 0.9
 
-**Definición en la línea 10 del archivo SiCoEn.java.**
+*Definición en la línea 10 del archivo SiCoEn.java.*
 
 #### Documentación de las funciones miembro
 
-* **static void SiCoEn.SiCoEn.main (String args[])[static]**
-Método principal de la aplicación.
-* **Parámetros:**
-args: El argumento de línea de comandos.
-* *Definición en la línea 17 del archivo SiCoEn.java.*
+* **static void SiCoEn.SiCoEn.main (String args[])[static]**: Método principal de la aplicación.
+ * **Parámetros.** args: El argumento de línea de comandos.
+ * *Definición en la línea 17 del archivo SiCoEn.java.*
 _ _ _
 
 
@@ -1062,53 +935,39 @@ José Manuel Castillo Pérez
 **Versión:**
 0.9
 
-**Definición en la línea 12 del archivo Texto.java.**
+*Definición en la línea 12 del archivo Texto.java.*
 
 #### Documentación del constructor y destructor
 
-* **SiCoEn.Texto.Texto (String texto)**
-Constructor de la ventana de texto.
-* **Parámetros:**
-texto: Texto que será mostrado en la ventana una vez sea creada.
-* *Definición en la línea 22 del archivo Texto.java.*
+* **SiCoEn.Texto.Texto (String texto)**: Constructor de la ventana de texto.
+ * **Parámetros.** texto: Texto que será mostrado en la ventana una vez sea creada.
+ * *Definición en la línea 22 del archivo Texto.java.*
 
 #### Documentación de las funciones miembro
 
-* **void SiCoEn.Texto.setArchivo (File archivo)**
-Método  que  asigna  un  archivo  de  texto  a  una  ventana  de  texto.  Necesario  para  las operaciones de cifrado y descifrado.
-* **Parámetros:**
-archivo: Archivo de texto que será asignado a la ventana de texto.
-* *Definición en la línea 36 del archivo Texto.java.*
+* **void SiCoEn.Texto.setArchivo (File archivo)**: Método  que  asigna  un  archivo  de  texto  a  una  ventana  de  texto.  Necesario  para  las operaciones de cifrado y descifrado.
+ * **Parámetros.** archivo: Archivo de texto que será asignado a la ventana de texto.
+ * *Definición en la línea 36 del archivo Texto.java.*
 
-* **File SiCoEn.Texto.getArchivo()**
-Método que devuelve el archivo al que está asignado la ventana de texto.
-* **Devuelve:**
-Archivo al que está asignado la ventana de texto.
-* *Definición en la línea 45 del archivo Texto.java.*
+* **File SiCoEn.Texto.getArchivo()**: Método que devuelve el archivo al que está asignado la ventana de texto.
+ * **Devuelve:** Archivo al que está asignado la ventana de texto.
+ * *Definición en la línea 45 del archivo Texto.java.*
 
-* **void SiCoEn.Texto.setFormato (int formato)**
-Método que asigna el formato en el que está el texto de la ventana (ASCII, binario o hexadecimal).
-* **Parámetros:**
-formato: Formato al que se va a cambiar el texto de la ventana.
-* *Definición en la línea 55 del archivo Texto.java.*
+* **void SiCoEn.Texto.setFormato (int formato)**: Método que asigna el formato en el que está el texto de la ventana (ASCII, binario o hexadecimal).
+ * **Parámetros.** formato: Formato al que se va a cambiar el texto de la ventana.
+ * *Definición en la línea 55 del archivo Texto.java.*
 
-* **int SiCoEn.Texto.getFormato()**
-Método que devuelve el formato en el que está el texto de la ventana.
-* **Devuelve:**
-Formato del texto de la ventana.
-* *Definición en la línea 64 del archivo Texto.java.*
+* **int SiCoEn.Texto.getFormato()**: Método que devuelve el formato en el que está el texto de la ventana.
+ * **Devuelve:** Formato del texto de la ventana.
+ * *Definición en la línea 64 del archivo Texto.java.*
 
-* **String SiCoEn.Texto.getTexto()**
-Método que devuelve el texto actual que se muestra en la ventana.
-* **Devuelve:**
-Texto de la ventana.
-* *Definición en la línea 73 del archivo Texto.java.*
+* **String SiCoEn.Texto.getTexto()**: Método que devuelve el texto actual que se muestra en la ventana.
+ * **Devuelve:** Texto de la ventana.
+ * *Definición en la línea 73 del archivo Texto.java.*
 
-* **void SiCoEn.Texto.setTexto (String texto)**
-Método que permite asignar texto a la ventana para que sea mostrado en ella.
-* **Parámetros:**
-texto: Texto a introducir en la ventana.
-* *Definición en la línea 91 del archivo Texto.java.*
+* **void SiCoEn.Texto.setTexto (String texto)**: Método que permite asignar texto a la ventana para que sea mostrado en ella.
+ * **Parámetros.** texto: Texto a introducir en la ventana.
+ * *Definición en la línea 91 del archivo Texto.java.*
 _ _ _
 
 
