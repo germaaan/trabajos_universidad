@@ -8,6 +8,8 @@ Seguridad y Protección de Sistemas Informáticos
 ### Germán Martínez Maldonado
 ### José Manuel Castillo Pérez
 
+## [Enlace a la presentación](presentacion.md)
+
 ## ÍNDICE
 
 1. [Introducción y objetivos](README.md#1-introducci%C3%B3n-y-objetivos)
@@ -386,6 +388,7 @@ Podríamos considerar la parte final del programa la opción **“Acerca de”**
 * SiCoEn.SiCoEn (SiCoEn.java)
 * JInternalFrame
  * SiCoEn.Texto (Texto.java)
+
 _ _ _
 
 ### Clase SiCoEn.Encriptador
