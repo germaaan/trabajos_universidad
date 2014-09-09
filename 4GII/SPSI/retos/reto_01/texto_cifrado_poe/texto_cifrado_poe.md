@@ -57,7 +57,6 @@ Uno de los divisores antes nombrados ha de ser el periodo de repetición de las 
 
 Comenzaremos con el divisor 2, las frecuencias de las letras de cada subdivisión son:
 
-```
 | K = 11 | W = 10 |
 |:------:|:------:|
 |  X = 8 |  E = 9 |
@@ -82,7 +81,6 @@ Comenzaremos con el divisor 2, las frecuencias de las letras de cada subdivisió
 |  F = 1 |  C = 2 |
 |        |  J = 1 |
 |        |  O = 1 |
-```
 
 El texto con las letras sustituidas es :
 
@@ -98,7 +96,6 @@ Analizando esta salida del programa no encontramos ninguna combinación de letra
 
 Con el divisor 3 las frecuencias serían:
 
-```
 | M = 7 | W = 7 | X = 6 |
 |:-----:|:-----:|:-----:|
 | E = 5 | A = 6 | L = 6 |
@@ -121,7 +118,6 @@ Con el divisor 3 las frecuencias serían:
 | F = 1 | O = 1 | D = 1 |
 | C = 1 | Y = 1 | H = 1 |
 |       | C = 1 |       |
-```
 
 El texto generado tras la sustitución de las letras es:
 
@@ -135,7 +131,6 @@ eXDMW BaYo BCH tW naP HWKGNeMCUt. ?
 
 En este caso tampoco consigo descrifrar ninguna palabra en inglés en este texto. Con el divisor 4 las frecuencias serían:
 
-```
 | W = 5 | E = 4 | K = 8 | E = 6 |
 |:-----:|:-----:|:-----:|:-----:|
 | G = 4 | L = 4 | L = 4 | W = 6 |
@@ -157,7 +152,6 @@ En este caso tampoco consigo descrifrar ninguna palabra en inglés en este texto
 | D = 1 | P = 1 |       | J = 1 |
 | F = 1 | C = 1 |       | O = 1 |
 | Y = 1 |       |       | H = 1 |
-```
 
 El texto con las letras sustituidas es:
 
@@ -171,7 +165,6 @@ aaY EtDoe BtYi BCH nW YaP ioKGoioCaK. ?
 
 Todavía no se puede descifrar ninguna palabra. Con el divisor 6 las frecuencias serían:
 
-```
 | K = 3 | E = 5 | X = 6 | E = 5 | W = 5 | S = 5 |
 |:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
 | B = 3 | A = 4 | K = 5 | V = 4 | K = 3 | L = 4 |
@@ -189,7 +182,6 @@ Todavía no se puede descifrar ninguna palabra. Con el divisor 6 las frecuencias
 | F = 1 |       |       |       | X = 1 | D = 1 |
 | H = 1 |       |       |       | U = 1 | G = 1 |
 | X = 1 |       |       |       |       | K = 1 |
-```
 
 El texto con las letras sustituidas es:
 
@@ -203,7 +195,7 @@ eCH eW aXP HoeGieaCUK. ?
 
 Todavía sin sacar ninguna palabra en claro. Con el divisor 12 las frecuencias serían:
 
-```| U = 3 | M = 3 | X = 3 | M = 3 | W = 4 | L = 3 | K = 3 | E = 3 | X = 3 | X = 3 | S = 2 | N = 3 |
+| U = 3 | M = 3 | X = 3 | M = 3 | W = 4 | L = 3 | K = 3 | E = 3 | X = 3 | X = 3 | S = 2 | N = 3 |
 |:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
 | N = 3 | B = 3 | K = 3 | E = 2 | H = 2 | S = 2 | M = 3 | A = 2 | M = 2 | E = 3 | K = 2 | S = 3 |
 | B = 2 | A = 2 | J = 1 | W = 2 | V = 2 | Y = 2 | A = 2 | U = 2 | K = 2 | H = 2 | Z = 1 | I = 1 |
@@ -215,7 +207,6 @@ Todavía sin sacar ninguna palabra en claro. Con el divisor 12 las frecuencias s
 | P = 1 | P = 1 | Y = 1 |       | Y = 1 | D = 1 | H = 1 | W = 0 | B = 1 | M = 1 | W = 1 | C = 1 |
 | F = 1 | X = 1 | H = 1 |       | X = 1 | K = 0 | X = 0 |       | H = 0 | W = 0 | D = 1 | G = 0 |
 |       | C = 0 | M = 0 |       | U = 0 |       |       |       |       |       | Y = 0 |       |
-```
 
 El texto con las letras sustituidas es:
 
