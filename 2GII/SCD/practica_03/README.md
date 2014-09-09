@@ -4,7 +4,7 @@ Sistemas Concurrentes y Distribuidos
 --------------------------------------------
 
 
-# Práctica 3: Programación de algoritmos distribuidos usando una interfaz paso de mensajes.
+# Práctica 3: Programación de algoritmos distribuidos usando una interfaz paso de mensajes
 ### Germán Martínez Maldonado
 
 ### 1 Objetivos

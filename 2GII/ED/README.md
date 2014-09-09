@@ -1,5 +1,5 @@
-Estructura de Computadores
-==========================
+Estructuras de Datos
+====================
 2º Grado en Ingeniería Informática 2011/2012
 --------------------------------------------
 

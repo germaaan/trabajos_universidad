@@ -4,7 +4,7 @@ Sistemas Concurrentes y Distribuidos
 --------------------------------------------
 
 
-# Práctica 2: Sincronización de hebras con semáforos
+# Práctica 2: Programación de monitores con hebras Java
 ### Germán Martínez Maldonado
 
 ### 1 Objetivos
