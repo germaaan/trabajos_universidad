@@ -462,8 +462,7 @@ Constructor del encriptador.
 
 #### Documentación de las funciones miembro
 
-* **int SiCoEn.Encriptador.getAlgoritmo()**: Método que devuelve el código interno del algoritmo actual del encriptador. *Definición en la línea 135 del archivo Encriptador.java.*
-* **Devuelve:** Algoritmo actual del encriptador (AES/Blowfish/DES/TripleDES).
+* **int SiCoEn.Encriptador.getAlgoritmo()**: Método que devuelve el código interno del algoritmo actual del encriptador. **Devuelve:** Algoritmo actual del encriptador (AES/Blowfish/DES/TripleDES). *Definición en la línea 135 del archivo Encriptador.java.*
 
 
 * **int SiCoEn.Encriptador.getModo()**
