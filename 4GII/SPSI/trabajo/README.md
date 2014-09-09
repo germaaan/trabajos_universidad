@@ -477,8 +477,7 @@ Constructor del encriptador.
  * *Definición en la línea 163 del archivo Encriptador.java.*
 
 * **void SiCoEn.Encriptador.setModo (int modo)**: Método para cambiar el modo actual del encriptador mediante su código interno.
- * **Parámetros:**
-  * modo: Modo al que cambiar (CBC/CFB/ECB/OFB).
+ * **Parámetros:** modo: Modo al que cambiar (CBC/CFB/ECB/OFB).
  * *Definición en la línea 173 del archivo Encriptador.java.*
 
 * **void SiCoEn.Encriptador.setPadding (int padding)**
