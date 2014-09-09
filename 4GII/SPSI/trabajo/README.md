@@ -464,29 +464,22 @@ Constructor del encriptador.
  * **Devuelve:** Algoritmo actual del encriptador (AES/Blowfish/DES/TripleDES).
  * *Definición en la línea 135 del archivo Encriptador.java.*
 
-* **int SiCoEn.Encriptador.getModo()**
-Método que devuelve el código interno del modo actual del encriptador.
- * **Devuelve:**
-Algoritmo actual del encriptador (CBC/CFB/ECB/OFB).
+* **int SiCoEn.Encriptador.getModo()**: Método que devuelve el código interno del modo actual del encriptador.
+ * **Devuelve:** Algoritmo actual del encriptador (CBC/CFB/ECB/OFB).
  * *Definición en la línea 144 del archivo Encriptador.java.*
 
-* **int SiCoEn.Encriptador.getPadding()**
-Método que devuelve el código interno del padding actual del encriptador.
-* **Devuelve:**
-Algoritmo actual del encriptador (PKCS5/ISO 10126).
-* *Definición en la línea 153 del archivo Encriptador.java.*
+* **int SiCoEn.Encriptador.getPadding()**: Método que devuelve el código interno del padding actual del encriptador.
+ * **Devuelve:** Algoritmo actual del encriptador (PKCS5/ISO 10126).
+ * *Definición en la línea 153 del archivo Encriptador.java.*
 
-* **void SiCoEn.Encriptador.setAlgoritmo (int algoritmo)**
-Método para cambiar el algoritmo actual del encriptador mediante su código interno.
-* **Parámetros:**
-algoritmo: Algoritmo al que cambiar (AES/Blowfish/DES/TripleDES).
-* *Definición en la línea 163 del archivo Encriptador.java.*
+* **void SiCoEn.Encriptador.setAlgoritmo (int algoritmo)**: Método para cambiar el algoritmo actual del encriptador mediante su código interno.
+ * **Parámetros:** algoritmo: Algoritmo al que cambiar (AES/Blowfish/DES/TripleDES).
+ * *Definición en la línea 163 del archivo Encriptador.java.*
 
-* **void SiCoEn.Encriptador.setModo (int modo)**
-Método para cambiar el modo actual del encriptador mediante su código interno.
-* **Parámetros:**
-modo: Modo al que cambiar (CBC/CFB/ECB/OFB).
-* *Definición en la línea 173 del archivo Encriptador.java.*
+* **void SiCoEn.Encriptador.setModo (int modo)**: Método para cambiar el modo actual del encriptador mediante su código interno.
+ * **Parámetros:**
+  * modo: Modo al que cambiar (CBC/CFB/ECB/OFB).
+ * *Definición en la línea 173 del archivo Encriptador.java.*
 
 * **void SiCoEn.Encriptador.setPadding (int padding)**
 Método para cambiar el padding actual del encriptador mediante su código interno.
