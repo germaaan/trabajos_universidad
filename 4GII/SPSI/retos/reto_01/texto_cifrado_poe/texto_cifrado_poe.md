@@ -21,9 +21,7 @@ WBXY SBC HV WYX PHWKGNAMCUK ?
 
 Los únicos datos seguros son que usó una clave de sustitución polialfabética, pero no conozco el periodo ni las distintas funciones que utilizó para realizarlo, y que en el texto hay 16 errores, uno de ellos grave y 15 probablemente de la transcripción del tipógrafo. También sabemos que el idioma del texto original es el inglés por lo que tengo que utilizar su alfabeto para el descifrado.
 
-Para realiza el análisis vamos a utilizar el método de Kasiski, éste método se basa en la búsqueda de fragmentos de texto repetidos en el mensaje cifrado, como no es demasiado improbable encontrar bigramas repetidos (probabilidad de 1/676) vamos a buscar trigramas cuya probabilidad de que sean fruto de la casualidad es 1/ 17576 lo cuál es muy poco probable.
-
-Tras estudiar el texto podemos ver la repetición de tres trigramas distintos:
+Para realiza el análisis vamos a utilizar el método de Kasiski, éste método se basa en la búsqueda de fragmentos de texto repetidos en el mensaje cifrado, como no es demasiado improbable encontrar bigramas repetidos (probabilidad de 1/676) vamos a buscar trigramas cuya probabilidad de que sean fruto de la casualidad es 1/17576 lo cuál es muy poco probable. Tras estudiar el texto podemos ver la repetición de tres trigramas distintos:
 
 ```
     GE JEASGDXV,
@@ -40,12 +38,9 @@ A continuación el método de Kasiski nos dice que tenemos que contar las distan
  * NUM = 72 {2,3,4,6,8,9,12,18,24,36,72}
  * NBX = 24 {2,3,4,6,8,12,24}
 
-Llegados a este punto vemos que tiene que haber algún error puesto que no hay ningún divisor común entre los de la distancia de MLW con los demás. El error puede venir del tipógrafo o del mismo Kulp pero la distancia entre los trigramas MLW no puede ser correcta ya sea por que se introdujo una letra de más entre ellos, se repitió el uso de alguna función o lo que es muy improbable la repetición de ese trigrama es fruto de la casualidad. Si por ejemplo la distancia fuera 90 en lugar de 91 ya sí existirían al menos 3 divisores comunes, pero no se puede guiar por un error por lo que se descarta usar ese trigrama para mi análisis.
+Llegados a este punto vemos que tiene que haber algún error puesto que no hay ningún divisor común entre los de la distancia de MLW con los demás. El error puede venir del tipógrafo o del mismo Kulp pero la distancia entre los trigramas MLW no puede ser correcta ya sea por que se introdujo una letra de más entre ellos, se repitió el uso de alguna función o lo que es muy improbable la repetición de ese trigrama es fruto de la casualidad. Si por ejemplo la distancia fuera 90 en lugar de 91 ya sí existirían al menos 3 divisores comunes, pero no se puede guiar por un error por lo que se descarta usar ese trigrama para el análisis. 
 
-
-Por lo tanto ahora dispongo de los siguientes divisores comunes: 2, 3, 4, 6, 12, 24.
-
-Uno de los divisores antes nombrados ha de ser el periodo de repetición de las funciones. Para comprobar cuál de ellos es tenemos que hacerlo uno por uno utilizándolos todos. Para realizar esta tarea he desarrollado un pequeño programa que automatizará el proceso, el programa básicamente realiza las siguientes tareas:
+Por lo tanto disponemos de los siguientes divisores comunes: 2, 3, 4, 6, 12, 24. Uno de los divisores antes nombrados ha de ser el periodo de repetición de las funciones. Para comprobar cuál de ellos es tenemos que hacerlo uno por uno utilizándolos todos. Para realizar esta tarea he desarrollado un pequeño programa que automatizará el proceso, el programa básicamente realiza las siguientes tareas:
 
 1. Quitará caracteres especiales como son las comas, puntos,etc.
 2. Eliminará los espacios entre palabra y los saltos de línea.
@@ -129,7 +124,7 @@ oaMin MO MLW aNBX MW AL PiFaCFPti WZotX iSoF XtIYAiUeM Ki Unn
 eXDMW BaYo BCH tW naP HWKGNeMCUt. ?
 ```
 
-En este caso tampoco consigo descrifrar ninguna palabra en inglés en este texto. Con el divisor 4 las frecuencias serían:
+En este caso tampoco se consigue descrifrar ninguna palabra en inglés en este texto. Con el divisor 4 las frecuencias serían:
 
 | W = 5 | E = 4 | K = 8 | E = 6 |
 |:-----:|:-----:|:-----:|:-----:|
@@ -255,6 +250,7 @@ how ys **iW**, LAAM, **Xhe** messHFZEK **Errives** KWKE TX the sacH LBMX
 Aith the VSMUKKay courLWK AGH other sDLNZWEo paterV OAEG Evco
 rdiGY MO MLe cate iW AL PNFlishrd WZKEX Hays preYAHUL. Ms the
 faXDM WBXg you or WYX PHWsmastyUK ?.
+```
 
 Tras esta nueva función vemos tres palabras más, las dos primeras son **“iW”** y **“Xhe”**, la primera de ellas podría ser **“it”** puesto que la frase comienza con **“How”** y podría ser **“How is it”**, aunque la segunda palabra de esa frase esté mal transcrita, **“ys”** puede ser uno de los 16 errores. La segunda palabra subrayada es claramente es **“the”** y la última podría ser **“Arrives”**. Con esto vamos a descubrir las nuevas funciones, que son: f5 = 23 y f10 = 22.
 
