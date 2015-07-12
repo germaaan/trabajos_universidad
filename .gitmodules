@@ -19,3 +19,6 @@
 [submodule "4GII/TE/practica_final"]
 	path = 4GII/TE/practica_final
 	url = git://github.com/josemlp91/NeuroWaveWar
+[submodule "4GII/PDM"]
+	path = 4GII/PDM
+	url = git://github.com/germaaan/ProgramacionDispositivosMoviles.git
