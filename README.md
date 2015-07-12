@@ -33,8 +33,8 @@
 * **4º Grado en Ingeniería Informática**
  * [Diseño de Aplicaciones para Internet](4GII/DAI)
  * [Infraestructura Virtual](4GII/IV)
- * [Programación de Dispositivos Móviles](4GII/PDM)
+ * [Programación de Dispositivos Móviles](https://github.com/germaaan/ProgramacionDispositivosMoviles)
  * [Seguridad y Protección de Sistemas Informáticos](4GII/SPSI)
  * [Tecnologías Emergentes](4GII/TE)
- * [Trabajo Fin de Grado](4GII/TFG)
+ * [Trabajo Fin de Grado](https://github.com/germaaan/TFG)
 
