@@ -22,3 +22,6 @@
 [submodule "4GII/PDM"]
 	path = 4GII/PDM
 	url = git://github.com/germaaan/ProgramacionDispositivosMoviles.git
+[submodule "4GII/TFG"]
+	path = 4GII/TFG
+	url = git://github.com/germaaan/TFG.git
