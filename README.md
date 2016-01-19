@@ -2,7 +2,7 @@
 
 ## Trabajos Universidad 2009-2015
 
-Repositorio con todos los trabajos desarrollados completamente o en colaboración en la **Universidad de Granada** entre los años *2009 y 2015*.
+Repositorio con todos los trabajos desarrollados completamente o en colaboración (crédito compartido con sus respectivos autores) para las diferentes asignaturas cursadas en la **Universidad de Granada** entre los años *2009 y 2015*.
 
 _Código_ liberado bajo licencia **GNU GENERAL PUBLIC LICENSE Version 3**.
 
