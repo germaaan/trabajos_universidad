@@ -120,7 +120,7 @@ main() {
 
 #### 3. Imprimir los resultados del programa single.c usando una directiva master dentro de la construcción parallel en lugar de imprimirlos fuera de la región parallel. Incorpore en su cuaderno volcados de pantalla con los resultados de ejecución obtenidos. ¿Qué diferencia observa con respecto a los resultados de ejecución del ejercicio 2?
 
-**single.c**
+**single.c** *(modificado)*
 
 ```
 #include <stdio.h> 
@@ -143,7 +143,8 @@ main() {
         for (i = 0; i < n; i++)
             b[i] = a;
 
-#pragma omp single
+#pragma omp master
+	    printf("Master ejecutada por el thread %d\n, omp_get_thread_num());
         for (i = 0; i < n; i++)
             printf("b[%d] = %d\t", i, b[i]);
 
